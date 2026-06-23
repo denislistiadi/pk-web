@@ -12,7 +12,6 @@ export function Footer() {
             <span className="font-semibold text-gray-400">Paham Kades</span>
           </div>
           <p>Kabupaten Pemalang — Cari & Bandingkan Calon Kepala Desa</p>
-          <p className="text-xs text-gray-600">Powered by EdgeOne Pages</p>
         </div>
       </div>
     </footer>
