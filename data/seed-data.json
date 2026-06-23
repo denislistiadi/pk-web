@@ -1,0 +1,2312 @@
+{
+  "kecamatan": [
+    {
+      "id": 1,
+      "nama": "Pemalang"
+    },
+    {
+      "id": 2,
+      "nama": "Taman"
+    },
+    {
+      "id": 3,
+      "nama": "Petarukan"
+    },
+    {
+      "id": 4,
+      "nama": "Ampelgading"
+    },
+    {
+      "id": 5,
+      "nama": "Bantarbolang"
+    },
+    {
+      "id": 6,
+      "nama": "Belik"
+    },
+    {
+      "id": 7,
+      "nama": "Bodeh"
+    },
+    {
+      "id": 8,
+      "nama": "Comal"
+    },
+    {
+      "id": 9,
+      "nama": "Moga"
+    },
+    {
+      "id": 10,
+      "nama": "Pulosari"
+    },
+    {
+      "id": 11,
+      "nama": "Randudongkal"
+    },
+    {
+      "id": 12,
+      "nama": "Ulujami"
+    },
+    {
+      "id": 13,
+      "nama": "Warungpring"
+    },
+    {
+      "id": 14,
+      "nama": "Watukumpul"
+    }
+  ],
+  "desa": [
+    {
+      "id": 1,
+      "nama": "Bojongnangka",
+      "kecamatan_id": 1
+    },
+    {
+      "id": 2,
+      "nama": "Danasari",
+      "kecamatan_id": 1
+    },
+    {
+      "id": 3,
+      "nama": "Kebondalem",
+      "kecamatan_id": 1
+    },
+    {
+      "id": 4,
+      "nama": "Pelutan",
+      "kecamatan_id": 1
+    },
+    {
+      "id": 5,
+      "nama": "Sewaka",
+      "kecamatan_id": 1
+    },
+    {
+      "id": 6,
+      "nama": "Sungapan",
+      "kecamatan_id": 1
+    },
+    {
+      "id": 7,
+      "nama": "Wanarejan Selatan",
+      "kecamatan_id": 1
+    },
+    {
+      "id": 8,
+      "nama": "Wanarejan Utara",
+      "kecamatan_id": 1
+    },
+    {
+      "id": 9,
+      "nama": "Beji",
+      "kecamatan_id": 2
+    },
+    {
+      "id": 10,
+      "nama": "Jebed Utara",
+      "kecamatan_id": 2
+    },
+    {
+      "id": 11,
+      "nama": "Kedungbanjar",
+      "kecamatan_id": 2
+    },
+    {
+      "id": 12,
+      "nama": "Pedurungan",
+      "kecamatan_id": 2
+    },
+    {
+      "id": 13,
+      "nama": "Rancamaya",
+      "kecamatan_id": 2
+    },
+    {
+      "id": 14,
+      "nama": "Taman",
+      "kecamatan_id": 2
+    },
+    {
+      "id": 15,
+      "nama": "Petarukan",
+      "kecamatan_id": 3
+    },
+    {
+      "id": 16,
+      "nama": "Kendaldoyong",
+      "kecamatan_id": 3
+    },
+    {
+      "id": 17,
+      "nama": "Pesucen",
+      "kecamatan_id": 3
+    },
+    {
+      "id": 18,
+      "nama": "Tegalmlati",
+      "kecamatan_id": 3
+    },
+    {
+      "id": 19,
+      "nama": "Ampelgading",
+      "kecamatan_id": 4
+    },
+    {
+      "id": 20,
+      "nama": "Banglarangan",
+      "kecamatan_id": 4
+    },
+    {
+      "id": 21,
+      "nama": "Karangtalok",
+      "kecamatan_id": 4
+    },
+    {
+      "id": 22,
+      "nama": "Bantarbolang",
+      "kecamatan_id": 5
+    },
+    {
+      "id": 23,
+      "nama": "Karanganyar",
+      "kecamatan_id": 5
+    },
+    {
+      "id": 24,
+      "nama": "Pegiringan",
+      "kecamatan_id": 5
+    },
+    {
+      "id": 25,
+      "nama": "Belik",
+      "kecamatan_id": 6
+    },
+    {
+      "id": 26,
+      "nama": "Bulusari",
+      "kecamatan_id": 6
+    },
+    {
+      "id": 27,
+      "nama": "Gunungjaya",
+      "kecamatan_id": 6
+    },
+    {
+      "id": 28,
+      "nama": "Bodeh",
+      "kecamatan_id": 7
+    },
+    {
+      "id": 29,
+      "nama": "Kesesirejo",
+      "kecamatan_id": 7
+    },
+    {
+      "id": 30,
+      "nama": "Pendowo",
+      "kecamatan_id": 7
+    },
+    {
+      "id": 31,
+      "nama": "Comal",
+      "kecamatan_id": 8
+    },
+    {
+      "id": 32,
+      "nama": "Purwosari",
+      "kecamatan_id": 8
+    },
+    {
+      "id": 33,
+      "nama": "Susukan",
+      "kecamatan_id": 8
+    },
+    {
+      "id": 34,
+      "nama": "Moga",
+      "kecamatan_id": 9
+    },
+    {
+      "id": 35,
+      "nama": "Pepedan",
+      "kecamatan_id": 9
+    },
+    {
+      "id": 36,
+      "nama": "Walangsanga",
+      "kecamatan_id": 9
+    },
+    {
+      "id": 37,
+      "nama": "Pulosari",
+      "kecamatan_id": 10
+    },
+    {
+      "id": 38,
+      "nama": "Cikendung",
+      "kecamatan_id": 10
+    },
+    {
+      "id": 39,
+      "nama": "Gambuhan",
+      "kecamatan_id": 10
+    },
+    {
+      "id": 40,
+      "nama": "Randudongkal",
+      "kecamatan_id": 11
+    },
+    {
+      "id": 41,
+      "nama": "Karangmoncol",
+      "kecamatan_id": 11
+    },
+    {
+      "id": 42,
+      "nama": "Semaya",
+      "kecamatan_id": 11
+    },
+    {
+      "id": 43,
+      "nama": "Ulujami",
+      "kecamatan_id": 12
+    },
+    {
+      "id": 44,
+      "nama": "Pagergunung",
+      "kecamatan_id": 12
+    },
+    {
+      "id": 45,
+      "nama": "Pesantren",
+      "kecamatan_id": 12
+    },
+    {
+      "id": 46,
+      "nama": "Warungpring",
+      "kecamatan_id": 13
+    },
+    {
+      "id": 47,
+      "nama": "Datar",
+      "kecamatan_id": 13
+    },
+    {
+      "id": 48,
+      "nama": "Mereng",
+      "kecamatan_id": 13
+    },
+    {
+      "id": 49,
+      "nama": "Watukumpul",
+      "kecamatan_id": 14
+    },
+    {
+      "id": 50,
+      "nama": "Bogor",
+      "kecamatan_id": 14
+    }
+  ],
+  "paslon": [
+    {
+      "id": 12,
+      "desa_id": 1,
+      "nomor_urut": 1,
+      "nama": "H. Abdul",
+      "visi": "Menjadikan Bojongnangka sebagai desa wisata dan pusat pertumbuhan ekonomi di Kecamatan Pemalang yang berkelanjutan.",
+      "misi": [
+        "Mengoptimalkan dana desa untuk program yang langsung dirasakan masyarakat",
+        "Membangun sistem pengelolaan sampah terpadu berbasis masyarakat",
+        "Mengadakan pelatihan kewirausahaan bagi pemuda putus sekolah"
+      ],
+      "pendidikan": "SD",
+      "umur": 51
+    },
+    {
+      "id": 13,
+      "desa_id": 1,
+      "nomor_urut": 2,
+      "nama": "Mardiyono S.Pd., M.Pd.",
+      "visi": "Menjadikan Bojongnangka sebagai desa yang religius, berkarakter, dan berdaya saing melalui pengembangan sumber daya manusia dan ekonomi kerakyatan.",
+      "misi": [
+        "Membangun kerjasama dengan perusahaan swasta untuk penyerapan tenaga kerja",
+        "Mengembangkan UMKM dan pasar desa untuk meningkatkan perekonomian warga",
+        "Meningkatkan kualitas infrastruktur jalan desa dan irigasi pertanian",
+        "Menyediakan beasiswa pendidikan bagi anak tidak mampu",
+        "Meningkatkan keamanan lingkungan dengan poskamling dan siskamling"
+      ],
+      "pendidikan": "SMP",
+      "umur": 46
+    },
+    {
+      "id": 14,
+      "desa_id": 2,
+      "nomor_urut": 1,
+      "nama": "Sutarno S.T.",
+      "visi": "Membangun Danasari yang hijau, bersih, dan sehat dengan mengedepankan pembangunan berkelanjutan dan pelestarian lingkungan.",
+      "misi": [
+        "Mengoptimalkan dana desa untuk program yang langsung dirasakan masyarakat",
+        "Mengadakan program desa bebas stunting",
+        "Mengadakan pelatihan pertanian organik bagi petani",
+        "Membangun sarana olahraga pemuda desa"
+      ],
+      "pendidikan": "S3",
+      "umur": 57
+    },
+    {
+      "id": 15,
+      "desa_id": 2,
+      "nomor_urut": 2,
+      "nama": "H. Ahmad",
+      "visi": "Membangun Danasari yang bersih, transparan, dan partisipatif menuju masyarakat yang adil dan makmur.",
+      "misi": [
+        "Membangun kerjasama dengan perusahaan swasta untuk penyerapan tenaga kerja",
+        "Menerapkan sistem pemerintahan desa berbasis digital",
+        "Membangun sarana olahraga pemuda desa",
+        "Membangun sistem pengelolaan sampah terpadu berbasis masyarakat",
+        "Meningkatkan keamanan lingkungan dengan poskamling dan siskamling"
+      ],
+      "pendidikan": "S3",
+      "umur": 40
+    },
+    {
+      "id": 16,
+      "desa_id": 3,
+      "nomor_urut": 1,
+      "nama": "Khoirul A.Md.",
+      "visi": "Menjadikan Kebondalem sebagai desa yang religius, berkarakter, dan berdaya saing melalui pengembangan sumber daya manusia dan ekonomi kerakyatan.",
+      "misi": [
+        "Menyelenggarakan musrenbangdes yang aspiratif dan inklusif",
+        "Mengembangkan desa wisata berbasis potensi lokal",
+        "Mendirikan bank sampah unit desa",
+        "Membangun sarana olahraga pemuda desa"
+      ],
+      "pendidikan": "S3",
+      "umur": 31
+    },
+    {
+      "id": 17,
+      "desa_id": 3,
+      "nomor_urut": 2,
+      "nama": "Suyatno S.E., M.M.",
+      "visi": "Membangun Kebondalem yang hijau, bersih, dan sehat dengan mengedepankan pembangunan berkelanjutan dan pelestarian lingkungan.",
+      "misi": [
+        "Membangun infrastruktur dasar yang merata hingga dusun terpencil",
+        "Memfasilitasi pelatihan digital marketing bagi pelaku UMKM",
+        "Menyediakan beasiswa pendidikan bagi anak tidak mampu"
+      ],
+      "pendidikan": "S1/D4",
+      "umur": 39
+    },
+    {
+      "id": 18,
+      "desa_id": 4,
+      "nomor_urut": 1,
+      "nama": "Mujiono S.T.",
+      "visi": "Menjadikan Pelutan sebagai desa yang religius, berkarakter, dan berdaya saing melalui pengembangan sumber daya manusia dan ekonomi kerakyatan.",
+      "misi": [
+        "Menghidupkan kembali kesenian dan budaya lokal",
+        "Mengoptimalkan dana desa untuk program yang langsung dirasakan masyarakat",
+        "Memperkuat karang taruna sebagai motor penggerak pemuda"
+      ],
+      "pendidikan": "SMA/SMK",
+      "umur": 32
+    },
+    {
+      "id": 19,
+      "desa_id": 4,
+      "nomor_urut": 2,
+      "nama": "Hendra S.Pd.",
+      "visi": "Mewujudkan Pelutan digital yang modern, produktif, dan inklusif melalui tata kelola pemerintahan yang baik.",
+      "misi": [
+        "Mengadakan program desa bebas stunting",
+        "Memberdayakan perempuan melalui pelatihan keterampilan dan koperasi wanita",
+        "Mengadakan festival desa tahunan untuk promosi potensi lokal",
+        "Mengembangkan desa wisata berbasis potensi lokal"
+      ],
+      "pendidikan": "SMP",
+      "umur": 41
+    },
+    {
+      "id": 20,
+      "desa_id": 4,
+      "nomor_urut": 3,
+      "nama": "Teguh S.T.",
+      "visi": "Menjadikan Pelutan sebagai desa wisata dan pusat pertumbuhan ekonomi di Kecamatan Pemalang yang berkelanjutan.",
+      "misi": [
+        "Membangun infrastruktur dasar yang merata hingga dusun terpencil",
+        "Menghidupkan kembali kesenian dan budaya lokal",
+        "Memberdayakan perempuan melalui pelatihan keterampilan dan koperasi wanita",
+        "Menyediakan beasiswa pendidikan bagi anak tidak mampu",
+        "Mendirikan bank sampah unit desa"
+      ],
+      "pendidikan": "S2",
+      "umur": 35
+    },
+    {
+      "id": 21,
+      "desa_id": 5,
+      "nomor_urut": 1,
+      "nama": "Tri S.E., M.M.",
+      "visi": "Mewujudkan Sewaka digital yang modern, produktif, dan inklusif melalui tata kelola pemerintahan yang baik.",
+      "misi": [
+        "Membangun infrastruktur dasar yang merata hingga dusun terpencil",
+        "Memberdayakan perempuan melalui pelatihan keterampilan dan koperasi wanita",
+        "Membangun taman bacaan masyarakat di setiap RW",
+        "Membangun instalasi pengolahan air bersih untuk seluruh warga"
+      ],
+      "pendidikan": "SMP",
+      "umur": 51
+    },
+    {
+      "id": 22,
+      "desa_id": 5,
+      "nomor_urut": 2,
+      "nama": "Amin",
+      "visi": "Mewujudkan desa Sewaka yang maju, mandiri, dan sejahtera melalui pembangunan infrastruktur berkelanjutan dan pemberdayaan masyarakat.",
+      "misi": [
+        "Mengadakan festival desa tahunan untuk promosi potensi lokal",
+        "Mengembangkan UMKM dan pasar desa untuk meningkatkan perekonomian warga",
+        "Mempermudah perizinan usaha mikro dan kecil"
+      ],
+      "pendidikan": "SMA/SMK",
+      "umur": 42
+    },
+    {
+      "id": 23,
+      "desa_id": 6,
+      "nomor_urut": 1,
+      "nama": "Muhammad S.T.",
+      "visi": "Mewujudkan Sungapan yang sejahtera, berkeadilan, dan bermartabat melalui pembangunan yang partisipatif dan transparan.",
+      "misi": [
+        "Menerapkan sistem pemerintahan desa berbasis digital",
+        "Meningkatkan keamanan lingkungan dengan poskamling dan siskamling",
+        "Memberdayakan perempuan melalui pelatihan keterampilan dan koperasi wanita",
+        "Menerapkan sistem anggaran desa yang transparan dan partisipatif",
+        "Memfasilitasi pelatihan digital marketing bagi pelaku UMKM"
+      ],
+      "pendidikan": "S2",
+      "umur": 44
+    },
+    {
+      "id": 24,
+      "desa_id": 6,
+      "nomor_urut": 2,
+      "nama": "Dwi S.H.",
+      "visi": "Membangun Sungapan yang bersih, transparan, dan partisipatif menuju masyarakat yang adil dan makmur.",
+      "misi": [
+        "Mengadakan pelatihan kewirausahaan bagi pemuda putus sekolah",
+        "Membangun instalasi pengolahan air bersih untuk seluruh warga",
+        "Membangun sarana olahraga pemuda desa"
+      ],
+      "pendidikan": "S2",
+      "umur": 48
+    },
+    {
+      "id": 25,
+      "desa_id": 6,
+      "nomor_urut": 3,
+      "nama": "M. Syafi S.H., M.H.",
+      "visi": "Mewujudkan Sungapan digital yang modern, produktif, dan inklusif melalui tata kelola pemerintahan yang baik.",
+      "misi": [
+        "Mengoptimalkan dana desa untuk program yang langsung dirasakan masyarakat",
+        "Membangun sistem pengelolaan sampah terpadu berbasis masyarakat",
+        "Menghijaukan desa dengan program satu rumah satu pohon",
+        "Menerapkan sistem anggaran desa yang transparan dan partisipatif"
+      ],
+      "pendidikan": "SD",
+      "umur": 54
+    },
+    {
+      "id": 26,
+      "desa_id": 7,
+      "nomor_urut": 1,
+      "nama": "Agus S.Pd.I.",
+      "visi": "Membangun Wanarejan Selatan yang bersih, transparan, dan partisipatif menuju masyarakat yang adil dan makmur.",
+      "misi": [
+        "Membangun kerjasama dengan perusahaan swasta untuk penyerapan tenaga kerja",
+        "Mendirikan bank sampah unit desa",
+        "Menyediakan beasiswa pendidikan bagi anak tidak mampu",
+        "Memfasilitasi pelatihan digital marketing bagi pelaku UMKM",
+        "Mengadakan program desa bebas stunting"
+      ],
+      "pendidikan": "S1/D4",
+      "umur": 38
+    },
+    {
+      "id": 27,
+      "desa_id": 7,
+      "nomor_urut": 2,
+      "nama": "Sutarno S.E.",
+      "visi": "Menjadikan Wanarejan Selatan sebagai desa yang religius, berkarakter, dan berdaya saing melalui pengembangan sumber daya manusia dan ekonomi kerakyatan.",
+      "misi": [
+        "Mengalokasikan dana desa untuk program prioritas masyarakat",
+        "Membangun instalasi pengolahan air bersih untuk seluruh warga",
+        "Memperkuat karang taruna sebagai motor penggerak pemuda",
+        "Membangun sarana olahraga pemuda desa",
+        "Memberdayakan perempuan melalui pelatihan keterampilan dan koperasi wanita"
+      ],
+      "pendidikan": "SMA/SMK",
+      "umur": 33
+    },
+    {
+      "id": 28,
+      "desa_id": 8,
+      "nomor_urut": 1,
+      "nama": "M. Syafi S.Pd.I.",
+      "visi": "Menjadikan Wanarejan Utara sebagai lumbung pangan dan pusat agroindustri yang berdaya saing tinggi.",
+      "misi": [
+        "Mengadakan pelatihan kewirausahaan bagi pemuda putus sekolah",
+        "Mengalokasikan dana desa untuk program prioritas masyarakat",
+        "Membangun sarana olahraga pemuda desa"
+      ],
+      "pendidikan": "S1/D4",
+      "umur": 54
+    },
+    {
+      "id": 29,
+      "desa_id": 8,
+      "nomor_urut": 2,
+      "nama": "Rina S.Pd., M.Pd.",
+      "visi": "Menjadikan Wanarejan Utara sebagai desa yang religius, berkarakter, dan berdaya saing melalui pengembangan sumber daya manusia dan ekonomi kerakyatan.",
+      "misi": [
+        "Mengadakan program bedah rumah untuk warga kurang mampu",
+        "Mengadakan festival desa tahunan untuk promosi potensi lokal",
+        "Memberdayakan perempuan melalui pelatihan keterampilan dan koperasi wanita",
+        "Menghijaukan desa dengan program satu rumah satu pohon",
+        "Mendirikan bank sampah unit desa"
+      ],
+      "pendidikan": "SMP",
+      "umur": 34
+    },
+    {
+      "id": 30,
+      "desa_id": 8,
+      "nomor_urut": 3,
+      "nama": "Puji",
+      "visi": "Membangun Wanarejan Utara yang bersih, transparan, dan partisipatif menuju masyarakat yang adil dan makmur.",
+      "misi": [
+        "Memperkuat karang taruna sebagai motor penggerak pemuda",
+        "Membangun infrastruktur dasar yang merata hingga dusun terpencil",
+        "Menghijaukan desa dengan program satu rumah satu pohon",
+        "Meningkatkan kualitas infrastruktur jalan desa dan irigasi pertanian",
+        "Mendirikan bank sampah unit desa"
+      ],
+      "pendidikan": "SMA/SMK",
+      "umur": 45
+    },
+    {
+      "id": 31,
+      "desa_id": 9,
+      "nomor_urut": 1,
+      "nama": "Agus S.Sos.",
+      "visi": "Menjadikan Beji sebagai desa wisata dan pusat pertumbuhan ekonomi di Kecamatan Taman yang berkelanjutan.",
+      "misi": [
+        "Mengembangkan UMKM dan pasar desa untuk meningkatkan perekonomian warga",
+        "Mengoptimalkan dana desa untuk program yang langsung dirasakan masyarakat",
+        "Mengalokasikan dana desa untuk program prioritas masyarakat"
+      ],
+      "pendidikan": "S1/D4",
+      "umur": 60
+    },
+    {
+      "id": 32,
+      "desa_id": 9,
+      "nomor_urut": 2,
+      "nama": "Khoirul S.Pd.",
+      "visi": "Menjadikan Beji sebagai lumbung pangan dan pusat agroindustri yang berdaya saing tinggi.",
+      "misi": [
+        "Memperkuat karang taruna sebagai motor penggerak pemuda",
+        "Membangun instalasi pengolahan air bersih untuk seluruh warga",
+        "Membangun sistem pengelolaan sampah terpadu berbasis masyarakat"
+      ],
+      "pendidikan": "SMP",
+      "umur": 51
+    },
+    {
+      "id": 33,
+      "desa_id": 10,
+      "nomor_urut": 1,
+      "nama": "Sutarno S.Pd.I.",
+      "visi": "Menjadikan Jebed Utara sebagai desa wisata dan pusat pertumbuhan ekonomi di Kecamatan Taman yang berkelanjutan.",
+      "misi": [
+        "Menyelenggarakan musrenbangdes yang aspiratif dan inklusif",
+        "Mendirikan bank sampah unit desa",
+        "Membangun kerjasama dengan perusahaan swasta untuk penyerapan tenaga kerja",
+        "Meningkatkan keamanan lingkungan dengan poskamling dan siskamling",
+        "Membangun infrastruktur dasar yang merata hingga dusun terpencil"
+      ],
+      "pendidikan": "S1/D4",
+      "umur": 54
+    },
+    {
+      "id": 34,
+      "desa_id": 10,
+      "nomor_urut": 2,
+      "nama": "Suyatno",
+      "visi": "Mewujudkan masyarakat Jebed Utara yang cerdas, sehat, dan sejahtera melalui pendidikan, kesehatan, dan ekonomi yang merata.",
+      "misi": [
+        "Mengadakan program bedah rumah untuk warga kurang mampu",
+        "Memfasilitasi pelatihan digital marketing bagi pelaku UMKM",
+        "Menghidupkan kembali kesenian dan budaya lokal",
+        "Memberdayakan perempuan melalui pelatihan keterampilan dan koperasi wanita",
+        "Mengembangkan desa wisata berbasis potensi lokal"
+      ],
+      "pendidikan": "D1/D3",
+      "umur": 58
+    },
+    {
+      "id": 35,
+      "desa_id": 10,
+      "nomor_urut": 3,
+      "nama": "Mega S.E., M.M.",
+      "visi": "Menjadikan Jebed Utara sebagai desa yang religius, berkarakter, dan berdaya saing melalui pengembangan sumber daya manusia dan ekonomi kerakyatan.",
+      "misi": [
+        "Mengoptimalkan dana desa untuk program yang langsung dirasakan masyarakat",
+        "Menyediakan beasiswa pendidikan bagi anak tidak mampu",
+        "Menerapkan sistem pemerintahan desa berbasis digital"
+      ],
+      "pendidikan": "SD",
+      "umur": 48
+    },
+    {
+      "id": 36,
+      "desa_id": 11,
+      "nomor_urut": 1,
+      "nama": "Suparman S.T.",
+      "visi": "Mewujudkan desa Kedungbanjar yang maju, mandiri, dan sejahtera melalui pembangunan infrastruktur berkelanjutan dan pemberdayaan masyarakat.",
+      "misi": [
+        "Membangun taman bacaan masyarakat di setiap RW",
+        "Memberdayakan perempuan melalui pelatihan keterampilan dan koperasi wanita",
+        "Mengembangkan UMKM dan pasar desa untuk meningkatkan perekonomian warga"
+      ],
+      "pendidikan": "SMP",
+      "umur": 32
+    },
+    {
+      "id": 37,
+      "desa_id": 11,
+      "nomor_urut": 2,
+      "nama": "Siti S.Sos.",
+      "visi": "Menjadikan Kedungbanjar sebagai desa yang religius, berkarakter, dan berdaya saing melalui pengembangan sumber daya manusia dan ekonomi kerakyatan.",
+      "misi": [
+        "Mengoptimalkan dana desa untuk program yang langsung dirasakan masyarakat",
+        "Membangun sarana olahraga pemuda desa",
+        "Menghidupkan kembali kesenian dan budaya lokal",
+        "Menerapkan sistem anggaran desa yang transparan dan partisipatif",
+        "Meningkatkan keamanan lingkungan dengan poskamling dan siskamling"
+      ],
+      "pendidikan": "S1/D4",
+      "umur": 34
+    },
+    {
+      "id": 38,
+      "desa_id": 12,
+      "nomor_urut": 1,
+      "nama": "Joko",
+      "visi": "Menjadikan Pedurungan sebagai lumbung pangan dan pusat agroindustri yang berdaya saing tinggi.",
+      "misi": [
+        "Meningkatkan keamanan lingkungan dengan poskamling dan siskamling",
+        "Meningkatkan layanan kesehatan desa dengan posyandu dan ambulans desa",
+        "Menghidupkan kembali kesenian dan budaya lokal",
+        "Membangun kerjasama dengan perusahaan swasta untuk penyerapan tenaga kerja"
+      ],
+      "pendidikan": "SMA/SMK",
+      "umur": 43
+    },
+    {
+      "id": 39,
+      "desa_id": 12,
+      "nomor_urut": 2,
+      "nama": "M. Khoir S.E., M.M.",
+      "visi": "Mewujudkan desa Pedurungan yang maju, mandiri, dan sejahtera melalui pembangunan infrastruktur berkelanjutan dan pemberdayaan masyarakat.",
+      "misi": [
+        "Memberdayakan perempuan melalui pelatihan keterampilan dan koperasi wanita",
+        "Meningkatkan layanan kesehatan desa dengan posyandu dan ambulans desa",
+        "Mengembangkan UMKM dan pasar desa untuk meningkatkan perekonomian warga",
+        "Memfasilitasi pelatihan digital marketing bagi pelaku UMKM",
+        "Mengadakan pelatihan kewirausahaan bagi pemuda putus sekolah"
+      ],
+      "pendidikan": "SMA/SMK",
+      "umur": 55
+    },
+    {
+      "id": 40,
+      "desa_id": 12,
+      "nomor_urut": 3,
+      "nama": "Eko S.T.",
+      "visi": "Mewujudkan masyarakat Pedurungan yang cerdas, sehat, dan sejahtera melalui pendidikan, kesehatan, dan ekonomi yang merata.",
+      "misi": [
+        "Membangun instalasi pengolahan air bersih untuk seluruh warga",
+        "Mengadakan program desa bebas stunting",
+        "Membangun sistem pengelolaan sampah terpadu berbasis masyarakat"
+      ],
+      "pendidikan": "D1/D3",
+      "umur": 35
+    },
+    {
+      "id": 41,
+      "desa_id": 13,
+      "nomor_urut": 1,
+      "nama": "Sutrisno S.T.",
+      "visi": "Menjadikan Rancamaya sebagai desa yang religius, berkarakter, dan berdaya saing melalui pengembangan sumber daya manusia dan ekonomi kerakyatan.",
+      "misi": [
+        "Mempermudah perizinan usaha mikro dan kecil",
+        "Menyelenggarakan musrenbangdes yang aspiratif dan inklusif",
+        "Membangun instalasi pengolahan air bersih untuk seluruh warga",
+        "Meningkatkan layanan kesehatan desa dengan posyandu dan ambulans desa"
+      ],
+      "pendidikan": "SD",
+      "umur": 50
+    },
+    {
+      "id": 42,
+      "desa_id": 13,
+      "nomor_urut": 2,
+      "nama": "Purwanto S.E.",
+      "visi": "Menjadikan Rancamaya sebagai desa yang religius, berkarakter, dan berdaya saing melalui pengembangan sumber daya manusia dan ekonomi kerakyatan.",
+      "misi": [
+        "Memperkuat pendidikan agama dan TPQ di setiap dusun",
+        "Membangun kerjasama dengan perusahaan swasta untuk penyerapan tenaga kerja",
+        "Menerapkan sistem anggaran desa yang transparan dan partisipatif"
+      ],
+      "pendidikan": "D1/D3",
+      "umur": 36
+    },
+    {
+      "id": 43,
+      "desa_id": 13,
+      "nomor_urut": 3,
+      "nama": "Miftahul S.E.",
+      "visi": "Membangun Rancamaya yang bersih, transparan, dan partisipatif menuju masyarakat yang adil dan makmur.",
+      "misi": [
+        "Meningkatkan kualitas infrastruktur jalan desa dan irigasi pertanian",
+        "Memfasilitasi pelatihan digital marketing bagi pelaku UMKM",
+        "Membangun sarana olahraga pemuda desa",
+        "Membangun infrastruktur dasar yang merata hingga dusun terpencil"
+      ],
+      "pendidikan": "S3",
+      "umur": 55
+    },
+    {
+      "id": 44,
+      "desa_id": 14,
+      "nomor_urut": 1,
+      "nama": "Yuni A.Md.",
+      "visi": "Membangun Taman yang hijau, bersih, dan sehat dengan mengedepankan pembangunan berkelanjutan dan pelestarian lingkungan.",
+      "misi": [
+        "Membangun taman bacaan masyarakat di setiap RW",
+        "Menerapkan sistem anggaran desa yang transparan dan partisipatif",
+        "Membangun sistem pengelolaan sampah terpadu berbasis masyarakat",
+        "Meningkatkan keamanan lingkungan dengan poskamling dan siskamling",
+        "Mengadakan program bedah rumah untuk warga kurang mampu"
+      ],
+      "pendidikan": "SMP",
+      "umur": 60
+    },
+    {
+      "id": 45,
+      "desa_id": 14,
+      "nomor_urut": 2,
+      "nama": "Nur S.H., M.H.",
+      "visi": "Membangun Taman yang hijau, bersih, dan sehat dengan mengedepankan pembangunan berkelanjutan dan pelestarian lingkungan.",
+      "misi": [
+        "Mengadakan pelatihan kewirausahaan bagi pemuda putus sekolah",
+        "Menerapkan sistem pemerintahan desa berbasis digital",
+        "Mengembangkan UMKM dan pasar desa untuk meningkatkan perekonomian warga"
+      ],
+      "pendidikan": "SD",
+      "umur": 48
+    },
+    {
+      "id": 46,
+      "desa_id": 14,
+      "nomor_urut": 3,
+      "nama": "H. Miftah S.Pd., M.Pd.",
+      "visi": "Membangun Taman yang hijau, bersih, dan sehat dengan mengedepankan pembangunan berkelanjutan dan pelestarian lingkungan.",
+      "misi": [
+        "Mengembangkan UMKM dan pasar desa untuk meningkatkan perekonomian warga",
+        "Menghijaukan desa dengan program satu rumah satu pohon",
+        "Menyediakan beasiswa pendidikan bagi anak tidak mampu"
+      ],
+      "pendidikan": "S3",
+      "umur": 35
+    },
+    {
+      "id": 47,
+      "desa_id": 15,
+      "nomor_urut": 1,
+      "nama": "Karsono S.Pd.",
+      "visi": "Mewujudkan masyarakat Petarukan yang cerdas, sehat, dan sejahtera melalui pendidikan, kesehatan, dan ekonomi yang merata.",
+      "misi": [
+        "Meningkatkan layanan kesehatan desa dengan posyandu dan ambulans desa",
+        "Mengalokasikan dana desa untuk program prioritas masyarakat",
+        "Mengadakan pelatihan pertanian organik bagi petani",
+        "Mengoptimalkan dana desa untuk program yang langsung dirasakan masyarakat"
+      ],
+      "pendidikan": "S1/D4",
+      "umur": 49
+    },
+    {
+      "id": 48,
+      "desa_id": 15,
+      "nomor_urut": 2,
+      "nama": "Siti S.H., M.H.",
+      "visi": "Menjadikan Petarukan sebagai desa yang religius, berkarakter, dan berdaya saing melalui pengembangan sumber daya manusia dan ekonomi kerakyatan.",
+      "misi": [
+        "Menghidupkan kembali kesenian dan budaya lokal",
+        "Mengadakan pelatihan pertanian organik bagi petani",
+        "Menghijaukan desa dengan program satu rumah satu pohon",
+        "Menerapkan sistem pemerintahan desa berbasis digital"
+      ],
+      "pendidikan": "SMA/SMK",
+      "umur": 36
+    },
+    {
+      "id": 49,
+      "desa_id": 16,
+      "nomor_urut": 1,
+      "nama": "Joko S.H.",
+      "visi": "Mewujudkan Kendaldoyong digital yang modern, produktif, dan inklusif melalui tata kelola pemerintahan yang baik.",
+      "misi": [
+        "Menghidupkan kembali kesenian dan budaya lokal",
+        "Memberdayakan perempuan melalui pelatihan keterampilan dan koperasi wanita",
+        "Mengadakan program bedah rumah untuk warga kurang mampu"
+      ],
+      "pendidikan": "D1/D3",
+      "umur": 40
+    },
+    {
+      "id": 50,
+      "desa_id": 16,
+      "nomor_urut": 2,
+      "nama": "Pujiono S.Pd.",
+      "visi": "Mewujudkan desa Kendaldoyong yang maju, mandiri, dan sejahtera melalui pembangunan infrastruktur berkelanjutan dan pemberdayaan masyarakat.",
+      "misi": [
+        "Mendirikan bank sampah unit desa",
+        "Mengadakan pelatihan pertanian organik bagi petani",
+        "Meningkatkan layanan kesehatan desa dengan posyandu dan ambulans desa",
+        "Menyediakan beasiswa pendidikan bagi anak tidak mampu"
+      ],
+      "pendidikan": "S1/D4",
+      "umur": 36
+    },
+    {
+      "id": 51,
+      "desa_id": 16,
+      "nomor_urut": 3,
+      "nama": "Lilis S.H.",
+      "visi": "Membangun Kendaldoyong yang bersih, transparan, dan partisipatif menuju masyarakat yang adil dan makmur.",
+      "misi": [
+        "Mengalokasikan dana desa untuk program prioritas masyarakat",
+        "Menyediakan beasiswa pendidikan bagi anak tidak mampu",
+        "Mengoptimalkan dana desa untuk program yang langsung dirasakan masyarakat",
+        "Mengembangkan desa wisata berbasis potensi lokal"
+      ],
+      "pendidikan": "SMA/SMK",
+      "umur": 35
+    },
+    {
+      "id": 52,
+      "desa_id": 17,
+      "nomor_urut": 1,
+      "nama": "Purwanto",
+      "visi": "Menjadikan Pesucen sebagai desa wisata dan pusat pertumbuhan ekonomi di Kecamatan Petarukan yang berkelanjutan.",
+      "misi": [
+        "Mempermudah perizinan usaha mikro dan kecil",
+        "Memberdayakan perempuan melalui pelatihan keterampilan dan koperasi wanita",
+        "Menghijaukan desa dengan program satu rumah satu pohon",
+        "Meningkatkan kualitas infrastruktur jalan desa dan irigasi pertanian",
+        "Menghidupkan kembali kesenian dan budaya lokal"
+      ],
+      "pendidikan": "S3",
+      "umur": 47
+    },
+    {
+      "id": 53,
+      "desa_id": 17,
+      "nomor_urut": 2,
+      "nama": "Zainal",
+      "visi": "Menjadikan Pesucen sebagai desa yang religius, berkarakter, dan berdaya saing melalui pengembangan sumber daya manusia dan ekonomi kerakyatan.",
+      "misi": [
+        "Membangun sarana olahraga pemuda desa",
+        "Meningkatkan layanan kesehatan desa dengan posyandu dan ambulans desa",
+        "Mengalokasikan dana desa untuk program prioritas masyarakat"
+      ],
+      "pendidikan": "SD",
+      "umur": 53
+    },
+    {
+      "id": 54,
+      "desa_id": 17,
+      "nomor_urut": 3,
+      "nama": "Sutarno S.Pd.I.",
+      "visi": "Menjadikan Pesucen sebagai desa wisata dan pusat pertumbuhan ekonomi di Kecamatan Petarukan yang berkelanjutan.",
+      "misi": [
+        "Mendirikan bank sampah unit desa",
+        "Meningkatkan keamanan lingkungan dengan poskamling dan siskamling",
+        "Membangun taman bacaan masyarakat di setiap RW",
+        "Menerapkan sistem pemerintahan desa berbasis digital"
+      ],
+      "pendidikan": "SMP",
+      "umur": 51
+    },
+    {
+      "id": 55,
+      "desa_id": 18,
+      "nomor_urut": 1,
+      "nama": "Lilis S.E., M.M.",
+      "visi": "Menjadikan Tegalmlati sebagai desa wisata dan pusat pertumbuhan ekonomi di Kecamatan Petarukan yang berkelanjutan.",
+      "misi": [
+        "Menyediakan beasiswa pendidikan bagi anak tidak mampu",
+        "Memberdayakan perempuan melalui pelatihan keterampilan dan koperasi wanita",
+        "Membangun kerjasama dengan perusahaan swasta untuk penyerapan tenaga kerja"
+      ],
+      "pendidikan": "S3",
+      "umur": 38
+    },
+    {
+      "id": 56,
+      "desa_id": 18,
+      "nomor_urut": 2,
+      "nama": "Siti S.E.",
+      "visi": "Membangun Tegalmlati yang agamis, aman, dan nyaman dengan mengedepankan gotong royong dan nilai-nilai kearifan lokal.",
+      "misi": [
+        "Memberdayakan perempuan melalui pelatihan keterampilan dan koperasi wanita",
+        "Membangun sarana olahraga pemuda desa",
+        "Memperkuat pendidikan agama dan TPQ di setiap dusun"
+      ],
+      "pendidikan": "S2",
+      "umur": 44
+    },
+    {
+      "id": 57,
+      "desa_id": 18,
+      "nomor_urut": 3,
+      "nama": "Sutarno",
+      "visi": "Mewujudkan Tegalmlati digital yang modern, produktif, dan inklusif melalui tata kelola pemerintahan yang baik.",
+      "misi": [
+        "Meningkatkan kualitas infrastruktur jalan desa dan irigasi pertanian",
+        "Meningkatkan layanan kesehatan desa dengan posyandu dan ambulans desa",
+        "Menyediakan beasiswa pendidikan bagi anak tidak mampu",
+        "Mengalokasikan dana desa untuk program prioritas masyarakat",
+        "Membangun taman bacaan masyarakat di setiap RW"
+      ],
+      "pendidikan": "SMP",
+      "umur": 47
+    },
+    {
+      "id": 58,
+      "desa_id": 19,
+      "nomor_urut": 1,
+      "nama": "Puji S.H., M.H.",
+      "visi": "Membangun Ampelgading yang hijau, bersih, dan sehat dengan mengedepankan pembangunan berkelanjutan dan pelestarian lingkungan.",
+      "misi": [
+        "Membangun kerjasama dengan perusahaan swasta untuk penyerapan tenaga kerja",
+        "Membangun sistem pengelolaan sampah terpadu berbasis masyarakat",
+        "Mengembangkan UMKM dan pasar desa untuk meningkatkan perekonomian warga"
+      ],
+      "pendidikan": "SMA/SMK",
+      "umur": 41
+    },
+    {
+      "id": 59,
+      "desa_id": 19,
+      "nomor_urut": 2,
+      "nama": "Siti S.Sos.",
+      "visi": "Mewujudkan masyarakat Ampelgading yang cerdas, sehat, dan sejahtera melalui pendidikan, kesehatan, dan ekonomi yang merata.",
+      "misi": [
+        "Mengoptimalkan dana desa untuk program yang langsung dirasakan masyarakat",
+        "Menghidupkan kembali kesenian dan budaya lokal",
+        "Meningkatkan layanan kesehatan desa dengan posyandu dan ambulans desa",
+        "Mengembangkan desa wisata berbasis potensi lokal",
+        "Memperkuat karang taruna sebagai motor penggerak pemuda"
+      ],
+      "pendidikan": "S1/D4",
+      "umur": 58
+    },
+    {
+      "id": 60,
+      "desa_id": 20,
+      "nomor_urut": 1,
+      "nama": "Sunaryo",
+      "visi": "Membangun Banglarangan yang bersih, transparan, dan partisipatif menuju masyarakat yang adil dan makmur.",
+      "misi": [
+        "Menyelenggarakan musrenbangdes yang aspiratif dan inklusif",
+        "Memperkuat pendidikan agama dan TPQ di setiap dusun",
+        "Mempermudah perizinan usaha mikro dan kecil"
+      ],
+      "pendidikan": "S3",
+      "umur": 35
+    },
+    {
+      "id": 61,
+      "desa_id": 20,
+      "nomor_urut": 2,
+      "nama": "M. Khoir S.E.",
+      "visi": "Membangun Banglarangan yang bersih, transparan, dan partisipatif menuju masyarakat yang adil dan makmur.",
+      "misi": [
+        "Membangun infrastruktur dasar yang merata hingga dusun terpencil",
+        "Menerapkan sistem pemerintahan desa berbasis digital",
+        "Mempermudah perizinan usaha mikro dan kecil",
+        "Membangun kerjasama dengan perusahaan swasta untuk penyerapan tenaga kerja",
+        "Menghidupkan kembali kesenian dan budaya lokal"
+      ],
+      "pendidikan": "S3",
+      "umur": 53
+    },
+    {
+      "id": 62,
+      "desa_id": 20,
+      "nomor_urut": 3,
+      "nama": "Joko S.H.",
+      "visi": "Membangun Banglarangan yang bersih, transparan, dan partisipatif menuju masyarakat yang adil dan makmur.",
+      "misi": [
+        "Meningkatkan layanan kesehatan desa dengan posyandu dan ambulans desa",
+        "Memfasilitasi pelatihan digital marketing bagi pelaku UMKM",
+        "Menyelenggarakan musrenbangdes yang aspiratif dan inklusif",
+        "Mengembangkan UMKM dan pasar desa untuk meningkatkan perekonomian warga",
+        "Menerapkan sistem anggaran desa yang transparan dan partisipatif"
+      ],
+      "pendidikan": "SMP",
+      "umur": 36
+    },
+    {
+      "id": 63,
+      "desa_id": 21,
+      "nomor_urut": 1,
+      "nama": "Teguh S.H.",
+      "visi": "Mewujudkan masyarakat Karangtalok yang cerdas, sehat, dan sejahtera melalui pendidikan, kesehatan, dan ekonomi yang merata.",
+      "misi": [
+        "Meningkatkan kualitas infrastruktur jalan desa dan irigasi pertanian",
+        "Menghidupkan kembali kesenian dan budaya lokal",
+        "Meningkatkan keamanan lingkungan dengan poskamling dan siskamling"
+      ],
+      "pendidikan": "D1/D3",
+      "umur": 40
+    },
+    {
+      "id": 64,
+      "desa_id": 21,
+      "nomor_urut": 2,
+      "nama": "Wahyu S.Pd.",
+      "visi": "Menjadikan Karangtalok sebagai desa wisata dan pusat pertumbuhan ekonomi di Kecamatan Ampelgading yang berkelanjutan.",
+      "misi": [
+        "Memberdayakan perempuan melalui pelatihan keterampilan dan koperasi wanita",
+        "Menghijaukan desa dengan program satu rumah satu pohon",
+        "Memfasilitasi pelatihan digital marketing bagi pelaku UMKM",
+        "Menghidupkan kembali kesenian dan budaya lokal"
+      ],
+      "pendidikan": "S3",
+      "umur": 47
+    },
+    {
+      "id": 65,
+      "desa_id": 21,
+      "nomor_urut": 3,
+      "nama": "Sari S.E.",
+      "visi": "Menjadikan Karangtalok sebagai desa yang religius, berkarakter, dan berdaya saing melalui pengembangan sumber daya manusia dan ekonomi kerakyatan.",
+      "misi": [
+        "Memperkuat pendidikan agama dan TPQ di setiap dusun",
+        "Mengadakan pelatihan pertanian organik bagi petani",
+        "Membangun sarana olahraga pemuda desa",
+        "Mengembangkan UMKM dan pasar desa untuk meningkatkan perekonomian warga"
+      ],
+      "pendidikan": "SD",
+      "umur": 49
+    },
+    {
+      "id": 66,
+      "desa_id": 22,
+      "nomor_urut": 1,
+      "nama": "Teguh",
+      "visi": "Membangun Bantarbolang yang agamis, aman, dan nyaman dengan mengedepankan gotong royong dan nilai-nilai kearifan lokal.",
+      "misi": [
+        "Mendirikan bank sampah unit desa",
+        "Menghijaukan desa dengan program satu rumah satu pohon",
+        "Meningkatkan layanan kesehatan desa dengan posyandu dan ambulans desa",
+        "Memfasilitasi pelatihan digital marketing bagi pelaku UMKM"
+      ],
+      "pendidikan": "S1/D4",
+      "umur": 36
+    },
+    {
+      "id": 67,
+      "desa_id": 22,
+      "nomor_urut": 2,
+      "nama": "Slamet S.E.",
+      "visi": "Mewujudkan Bantarbolang digital yang modern, produktif, dan inklusif melalui tata kelola pemerintahan yang baik.",
+      "misi": [
+        "Menghijaukan desa dengan program satu rumah satu pohon",
+        "Membangun infrastruktur dasar yang merata hingga dusun terpencil",
+        "Mempermudah perizinan usaha mikro dan kecil"
+      ],
+      "pendidikan": "S1/D4",
+      "umur": 51
+    },
+    {
+      "id": 68,
+      "desa_id": 22,
+      "nomor_urut": 3,
+      "nama": "Suyatno",
+      "visi": "Mewujudkan masyarakat Bantarbolang yang cerdas, sehat, dan sejahtera melalui pendidikan, kesehatan, dan ekonomi yang merata.",
+      "misi": [
+        "Membangun kerjasama dengan perusahaan swasta untuk penyerapan tenaga kerja",
+        "Menyediakan beasiswa pendidikan bagi anak tidak mampu",
+        "Menghidupkan kembali kesenian dan budaya lokal",
+        "Membangun infrastruktur dasar yang merata hingga dusun terpencil"
+      ],
+      "pendidikan": "SMA/SMK",
+      "umur": 49
+    },
+    {
+      "id": 69,
+      "desa_id": 23,
+      "nomor_urut": 1,
+      "nama": "Maryono S.Pd.",
+      "visi": "Menjadikan Karanganyar sebagai desa wisata dan pusat pertumbuhan ekonomi di Kecamatan Bantarbolang yang berkelanjutan.",
+      "misi": [
+        "Mengadakan program bedah rumah untuk warga kurang mampu",
+        "Menghidupkan kembali kesenian dan budaya lokal",
+        "Membangun kerjasama dengan perusahaan swasta untuk penyerapan tenaga kerja",
+        "Menerapkan sistem pemerintahan desa berbasis digital",
+        "Memfasilitasi pelatihan digital marketing bagi pelaku UMKM"
+      ],
+      "pendidikan": "S2",
+      "umur": 39
+    },
+    {
+      "id": 70,
+      "desa_id": 23,
+      "nomor_urut": 2,
+      "nama": "Sutarno S.Pd.I.",
+      "visi": "Mewujudkan masyarakat Karanganyar yang cerdas, sehat, dan sejahtera melalui pendidikan, kesehatan, dan ekonomi yang merata.",
+      "misi": [
+        "Menghidupkan kembali kesenian dan budaya lokal",
+        "Memfasilitasi pelatihan digital marketing bagi pelaku UMKM",
+        "Mengadakan pelatihan kewirausahaan bagi pemuda putus sekolah",
+        "Mengalokasikan dana desa untuk program prioritas masyarakat"
+      ],
+      "pendidikan": "SMP",
+      "umur": 49
+    },
+    {
+      "id": 71,
+      "desa_id": 23,
+      "nomor_urut": 3,
+      "nama": "Mujiono S.H.",
+      "visi": "Mewujudkan Karanganyar digital yang modern, produktif, dan inklusif melalui tata kelola pemerintahan yang baik.",
+      "misi": [
+        "Mengadakan festival desa tahunan untuk promosi potensi lokal",
+        "Meningkatkan kualitas infrastruktur jalan desa dan irigasi pertanian",
+        "Mengadakan program bedah rumah untuk warga kurang mampu",
+        "Meningkatkan keamanan lingkungan dengan poskamling dan siskamling",
+        "Membangun kerjasama dengan perusahaan swasta untuk penyerapan tenaga kerja"
+      ],
+      "pendidikan": "S3",
+      "umur": 48
+    },
+    {
+      "id": 72,
+      "desa_id": 24,
+      "nomor_urut": 1,
+      "nama": "Sutrisno S.E., M.M.",
+      "visi": "Menjadikan Pegiringan sebagai lumbung pangan dan pusat agroindustri yang berdaya saing tinggi.",
+      "misi": [
+        "Meningkatkan keamanan lingkungan dengan poskamling dan siskamling",
+        "Menghijaukan desa dengan program satu rumah satu pohon",
+        "Menerapkan sistem anggaran desa yang transparan dan partisipatif",
+        "Mempermudah perizinan usaha mikro dan kecil",
+        "Mengalokasikan dana desa untuk program prioritas masyarakat"
+      ],
+      "pendidikan": "S3",
+      "umur": 53
+    },
+    {
+      "id": 73,
+      "desa_id": 24,
+      "nomor_urut": 2,
+      "nama": "Tri",
+      "visi": "Menjadikan Pegiringan sebagai desa yang religius, berkarakter, dan berdaya saing melalui pengembangan sumber daya manusia dan ekonomi kerakyatan.",
+      "misi": [
+        "Menghijaukan desa dengan program satu rumah satu pohon",
+        "Menghidupkan kembali kesenian dan budaya lokal",
+        "Memberdayakan perempuan melalui pelatihan keterampilan dan koperasi wanita",
+        "Mendirikan bank sampah unit desa"
+      ],
+      "pendidikan": "SMA/SMK",
+      "umur": 32
+    },
+    {
+      "id": 74,
+      "desa_id": 24,
+      "nomor_urut": 3,
+      "nama": "Pujiono S.T.",
+      "visi": "Menjadikan Pegiringan sebagai desa wisata dan pusat pertumbuhan ekonomi di Kecamatan Bantarbolang yang berkelanjutan.",
+      "misi": [
+        "Mempermudah perizinan usaha mikro dan kecil",
+        "Meningkatkan keamanan lingkungan dengan poskamling dan siskamling",
+        "Membangun sistem pengelolaan sampah terpadu berbasis masyarakat"
+      ],
+      "pendidikan": "SD",
+      "umur": 31
+    },
+    {
+      "id": 75,
+      "desa_id": 25,
+      "nomor_urut": 1,
+      "nama": "H. Miftah S.H., M.H.",
+      "visi": "Menjadikan Belik sebagai desa yang religius, berkarakter, dan berdaya saing melalui pengembangan sumber daya manusia dan ekonomi kerakyatan.",
+      "misi": [
+        "Membangun kerjasama dengan perusahaan swasta untuk penyerapan tenaga kerja",
+        "Mengalokasikan dana desa untuk program prioritas masyarakat",
+        "Memberdayakan perempuan melalui pelatihan keterampilan dan koperasi wanita",
+        "Mengadakan pelatihan pertanian organik bagi petani"
+      ],
+      "pendidikan": "SMP",
+      "umur": 52
+    },
+    {
+      "id": 76,
+      "desa_id": 25,
+      "nomor_urut": 2,
+      "nama": "Darsono A.Md.",
+      "visi": "Menjadikan Belik sebagai lumbung pangan dan pusat agroindustri yang berdaya saing tinggi.",
+      "misi": [
+        "Mengoptimalkan dana desa untuk program yang langsung dirasakan masyarakat",
+        "Membangun sistem pengelolaan sampah terpadu berbasis masyarakat",
+        "Memberdayakan perempuan melalui pelatihan keterampilan dan koperasi wanita",
+        "Membangun taman bacaan masyarakat di setiap RW"
+      ],
+      "pendidikan": "SD",
+      "umur": 58
+    },
+    {
+      "id": 77,
+      "desa_id": 26,
+      "nomor_urut": 1,
+      "nama": "Suwarno A.Md.",
+      "visi": "Mewujudkan masyarakat Bulusari yang cerdas, sehat, dan sejahtera melalui pendidikan, kesehatan, dan ekonomi yang merata.",
+      "misi": [
+        "Mempermudah perizinan usaha mikro dan kecil",
+        "Membangun taman bacaan masyarakat di setiap RW",
+        "Menghijaukan desa dengan program satu rumah satu pohon"
+      ],
+      "pendidikan": "D1/D3",
+      "umur": 31
+    },
+    {
+      "id": 78,
+      "desa_id": 26,
+      "nomor_urut": 2,
+      "nama": "Sutarno S.T.",
+      "visi": "Menjadikan Bulusari sebagai desa yang religius, berkarakter, dan berdaya saing melalui pengembangan sumber daya manusia dan ekonomi kerakyatan.",
+      "misi": [
+        "Membangun sistem pengelolaan sampah terpadu berbasis masyarakat",
+        "Mempermudah perizinan usaha mikro dan kecil",
+        "Mengadakan program desa bebas stunting",
+        "Menghidupkan kembali kesenian dan budaya lokal"
+      ],
+      "pendidikan": "S1/D4",
+      "umur": 47
+    },
+    {
+      "id": 79,
+      "desa_id": 27,
+      "nomor_urut": 1,
+      "nama": "Pujiono S.E., M.M.",
+      "visi": "Mewujudkan Gunungjaya yang sejahtera, berkeadilan, dan bermartabat melalui pembangunan yang partisipatif dan transparan.",
+      "misi": [
+        "Mengalokasikan dana desa untuk program prioritas masyarakat",
+        "Menghijaukan desa dengan program satu rumah satu pohon",
+        "Membangun kerjasama dengan perusahaan swasta untuk penyerapan tenaga kerja",
+        "Mengadakan festival desa tahunan untuk promosi potensi lokal",
+        "Membangun infrastruktur dasar yang merata hingga dusun terpencil"
+      ],
+      "pendidikan": "S1/D4",
+      "umur": 44
+    },
+    {
+      "id": 80,
+      "desa_id": 27,
+      "nomor_urut": 2,
+      "nama": "Tri",
+      "visi": "Menjadikan Gunungjaya sebagai lumbung pangan dan pusat agroindustri yang berdaya saing tinggi.",
+      "misi": [
+        "Membangun sarana olahraga pemuda desa",
+        "Memperkuat karang taruna sebagai motor penggerak pemuda",
+        "Mengoptimalkan dana desa untuk program yang langsung dirasakan masyarakat",
+        "Mengadakan festival desa tahunan untuk promosi potensi lokal"
+      ],
+      "pendidikan": "S2",
+      "umur": 38
+    },
+    {
+      "id": 81,
+      "desa_id": 27,
+      "nomor_urut": 3,
+      "nama": "Suwarno",
+      "visi": "Membangun Gunungjaya yang hijau, bersih, dan sehat dengan mengedepankan pembangunan berkelanjutan dan pelestarian lingkungan.",
+      "misi": [
+        "Memberdayakan perempuan melalui pelatihan keterampilan dan koperasi wanita",
+        "Mengoptimalkan dana desa untuk program yang langsung dirasakan masyarakat",
+        "Membangun sarana olahraga pemuda desa",
+        "Mengadakan program desa bebas stunting"
+      ],
+      "pendidikan": "SD",
+      "umur": 52
+    },
+    {
+      "id": 82,
+      "desa_id": 28,
+      "nomor_urut": 1,
+      "nama": "Joko S.H.",
+      "visi": "Membangun Bodeh yang agamis, aman, dan nyaman dengan mengedepankan gotong royong dan nilai-nilai kearifan lokal.",
+      "misi": [
+        "Mengalokasikan dana desa untuk program prioritas masyarakat",
+        "Membangun instalasi pengolahan air bersih untuk seluruh warga",
+        "Menyediakan beasiswa pendidikan bagi anak tidak mampu",
+        "Membangun sistem pengelolaan sampah terpadu berbasis masyarakat"
+      ],
+      "pendidikan": "SMP",
+      "umur": 37
+    },
+    {
+      "id": 83,
+      "desa_id": 28,
+      "nomor_urut": 2,
+      "nama": "Ratna",
+      "visi": "Membangun Bodeh yang bersih, transparan, dan partisipatif menuju masyarakat yang adil dan makmur.",
+      "misi": [
+        "Meningkatkan keamanan lingkungan dengan poskamling dan siskamling",
+        "Menyediakan beasiswa pendidikan bagi anak tidak mampu",
+        "Membangun kerjasama dengan perusahaan swasta untuk penyerapan tenaga kerja",
+        "Menerapkan sistem pemerintahan desa berbasis digital",
+        "Membangun instalasi pengolahan air bersih untuk seluruh warga"
+      ],
+      "pendidikan": "D1/D3",
+      "umur": 43
+    },
+    {
+      "id": 84,
+      "desa_id": 28,
+      "nomor_urut": 3,
+      "nama": "Nur S.T.",
+      "visi": "Mewujudkan Bodeh digital yang modern, produktif, dan inklusif melalui tata kelola pemerintahan yang baik.",
+      "misi": [
+        "Mengalokasikan dana desa untuk program prioritas masyarakat",
+        "Memperkuat karang taruna sebagai motor penggerak pemuda",
+        "Mengadakan pelatihan pertanian organik bagi petani",
+        "Membangun taman bacaan masyarakat di setiap RW"
+      ],
+      "pendidikan": "SD",
+      "umur": 57
+    },
+    {
+      "id": 85,
+      "desa_id": 29,
+      "nomor_urut": 1,
+      "nama": "H. Miftah S.E.",
+      "visi": "Membangun Kesesirejo yang agamis, aman, dan nyaman dengan mengedepankan gotong royong dan nilai-nilai kearifan lokal.",
+      "misi": [
+        "Memperkuat karang taruna sebagai motor penggerak pemuda",
+        "Memfasilitasi pelatihan digital marketing bagi pelaku UMKM",
+        "Menyelenggarakan musrenbangdes yang aspiratif dan inklusif",
+        "Mengalokasikan dana desa untuk program prioritas masyarakat"
+      ],
+      "pendidikan": "S3",
+      "umur": 43
+    },
+    {
+      "id": 86,
+      "desa_id": 29,
+      "nomor_urut": 2,
+      "nama": "Purwanto",
+      "visi": "Membangun Kesesirejo yang hijau, bersih, dan sehat dengan mengedepankan pembangunan berkelanjutan dan pelestarian lingkungan.",
+      "misi": [
+        "Mengalokasikan dana desa untuk program prioritas masyarakat",
+        "Mengoptimalkan dana desa untuk program yang langsung dirasakan masyarakat",
+        "Menerapkan sistem anggaran desa yang transparan dan partisipatif",
+        "Membangun sarana olahraga pemuda desa",
+        "Membangun kerjasama dengan perusahaan swasta untuk penyerapan tenaga kerja"
+      ],
+      "pendidikan": "D1/D3",
+      "umur": 30
+    },
+    {
+      "id": 87,
+      "desa_id": 29,
+      "nomor_urut": 3,
+      "nama": "Ratna S.Sos.",
+      "visi": "Mewujudkan Kesesirejo digital yang modern, produktif, dan inklusif melalui tata kelola pemerintahan yang baik.",
+      "misi": [
+        "Memperkuat pendidikan agama dan TPQ di setiap dusun",
+        "Mengadakan festival desa tahunan untuk promosi potensi lokal",
+        "Mengadakan program desa bebas stunting",
+        "Membangun infrastruktur dasar yang merata hingga dusun terpencil",
+        "Membangun sistem pengelolaan sampah terpadu berbasis masyarakat"
+      ],
+      "pendidikan": "S1/D4",
+      "umur": 47
+    },
+    {
+      "id": 88,
+      "desa_id": 30,
+      "nomor_urut": 1,
+      "nama": "Miftahul S.H., M.H.",
+      "visi": "Mewujudkan Pendowo yang sejahtera, berkeadilan, dan bermartabat melalui pembangunan yang partisipatif dan transparan.",
+      "misi": [
+        "Meningkatkan kualitas infrastruktur jalan desa dan irigasi pertanian",
+        "Menyediakan beasiswa pendidikan bagi anak tidak mampu",
+        "Memberdayakan perempuan melalui pelatihan keterampilan dan koperasi wanita",
+        "Membangun kerjasama dengan perusahaan swasta untuk penyerapan tenaga kerja",
+        "Membangun sistem pengelolaan sampah terpadu berbasis masyarakat"
+      ],
+      "pendidikan": "S3",
+      "umur": 44
+    },
+    {
+      "id": 89,
+      "desa_id": 30,
+      "nomor_urut": 2,
+      "nama": "Rina S.E.",
+      "visi": "Menjadikan Pendowo sebagai desa wisata dan pusat pertumbuhan ekonomi di Kecamatan Bodeh yang berkelanjutan.",
+      "misi": [
+        "Menerapkan sistem pemerintahan desa berbasis digital",
+        "Meningkatkan keamanan lingkungan dengan poskamling dan siskamling",
+        "Mengadakan program desa bebas stunting",
+        "Memperkuat karang taruna sebagai motor penggerak pemuda"
+      ],
+      "pendidikan": "D1/D3",
+      "umur": 38
+    },
+    {
+      "id": 90,
+      "desa_id": 31,
+      "nomor_urut": 1,
+      "nama": "Slamet S.Pd.",
+      "visi": "Menjadikan Comal sebagai lumbung pangan dan pusat agroindustri yang berdaya saing tinggi.",
+      "misi": [
+        "Mengadakan pelatihan kewirausahaan bagi pemuda putus sekolah",
+        "Membangun instalasi pengolahan air bersih untuk seluruh warga",
+        "Mengembangkan UMKM dan pasar desa untuk meningkatkan perekonomian warga"
+      ],
+      "pendidikan": "SMA/SMK",
+      "umur": 37
+    },
+    {
+      "id": 91,
+      "desa_id": 31,
+      "nomor_urut": 2,
+      "nama": "Wagiman S.Pd.",
+      "visi": "Mewujudkan desa Comal yang maju, mandiri, dan sejahtera melalui pembangunan infrastruktur berkelanjutan dan pemberdayaan masyarakat.",
+      "misi": [
+        "Mengoptimalkan dana desa untuk program yang langsung dirasakan masyarakat",
+        "Meningkatkan keamanan lingkungan dengan poskamling dan siskamling",
+        "Mengadakan festival desa tahunan untuk promosi potensi lokal"
+      ],
+      "pendidikan": "SD",
+      "umur": 49
+    },
+    {
+      "id": 92,
+      "desa_id": 31,
+      "nomor_urut": 3,
+      "nama": "Dwi S.T.",
+      "visi": "Membangun Comal yang bersih, transparan, dan partisipatif menuju masyarakat yang adil dan makmur.",
+      "misi": [
+        "Menghidupkan kembali kesenian dan budaya lokal",
+        "Meningkatkan layanan kesehatan desa dengan posyandu dan ambulans desa",
+        "Mengadakan pelatihan pertanian organik bagi petani",
+        "Meningkatkan keamanan lingkungan dengan poskamling dan siskamling"
+      ],
+      "pendidikan": "D1/D3",
+      "umur": 52
+    },
+    {
+      "id": 93,
+      "desa_id": 32,
+      "nomor_urut": 1,
+      "nama": "Suwarno S.Sos.",
+      "visi": "Membangun Purwosari yang bersih, transparan, dan partisipatif menuju masyarakat yang adil dan makmur.",
+      "misi": [
+        "Mendirikan bank sampah unit desa",
+        "Mengadakan pelatihan kewirausahaan bagi pemuda putus sekolah",
+        "Membangun taman bacaan masyarakat di setiap RW",
+        "Meningkatkan layanan kesehatan desa dengan posyandu dan ambulans desa",
+        "Memperkuat karang taruna sebagai motor penggerak pemuda"
+      ],
+      "pendidikan": "S3",
+      "umur": 35
+    },
+    {
+      "id": 94,
+      "desa_id": 32,
+      "nomor_urut": 2,
+      "nama": "Zainal S.Pd.",
+      "visi": "Mewujudkan Purwosari yang sejahtera, berkeadilan, dan bermartabat melalui pembangunan yang partisipatif dan transparan.",
+      "misi": [
+        "Membangun infrastruktur dasar yang merata hingga dusun terpencil",
+        "Mengadakan program bedah rumah untuk warga kurang mampu",
+        "Mengadakan pelatihan pertanian organik bagi petani"
+      ],
+      "pendidikan": "S2",
+      "umur": 59
+    },
+    {
+      "id": 95,
+      "desa_id": 32,
+      "nomor_urut": 3,
+      "nama": "Ratna A.Md.",
+      "visi": "Mewujudkan masyarakat Purwosari yang cerdas, sehat, dan sejahtera melalui pendidikan, kesehatan, dan ekonomi yang merata.",
+      "misi": [
+        "Mengadakan pelatihan pertanian organik bagi petani",
+        "Membangun taman bacaan masyarakat di setiap RW",
+        "Mengadakan festival desa tahunan untuk promosi potensi lokal"
+      ],
+      "pendidikan": "S2",
+      "umur": 37
+    },
+    {
+      "id": 96,
+      "desa_id": 33,
+      "nomor_urut": 1,
+      "nama": "Darsono",
+      "visi": "Menjadikan Susukan sebagai desa wisata dan pusat pertumbuhan ekonomi di Kecamatan Comal yang berkelanjutan.",
+      "misi": [
+        "Mendirikan bank sampah unit desa",
+        "Mempermudah perizinan usaha mikro dan kecil",
+        "Meningkatkan layanan kesehatan desa dengan posyandu dan ambulans desa",
+        "Mengadakan pelatihan pertanian organik bagi petani",
+        "Mengembangkan UMKM dan pasar desa untuk meningkatkan perekonomian warga"
+      ],
+      "pendidikan": "SMA/SMK",
+      "umur": 47
+    },
+    {
+      "id": 97,
+      "desa_id": 33,
+      "nomor_urut": 2,
+      "nama": "M. Syafi",
+      "visi": "Membangun Susukan yang agamis, aman, dan nyaman dengan mengedepankan gotong royong dan nilai-nilai kearifan lokal.",
+      "misi": [
+        "Menghijaukan desa dengan program satu rumah satu pohon",
+        "Memberdayakan perempuan melalui pelatihan keterampilan dan koperasi wanita",
+        "Menerapkan sistem pemerintahan desa berbasis digital"
+      ],
+      "pendidikan": "SD",
+      "umur": 57
+    },
+    {
+      "id": 98,
+      "desa_id": 34,
+      "nomor_urut": 1,
+      "nama": "H. Nur S.Pd.",
+      "visi": "Mewujudkan Moga digital yang modern, produktif, dan inklusif melalui tata kelola pemerintahan yang baik.",
+      "misi": [
+        "Memberdayakan perempuan melalui pelatihan keterampilan dan koperasi wanita",
+        "Mengalokasikan dana desa untuk program prioritas masyarakat",
+        "Mengadakan festival desa tahunan untuk promosi potensi lokal",
+        "Mengadakan program desa bebas stunting"
+      ],
+      "pendidikan": "S2",
+      "umur": 34
+    },
+    {
+      "id": 99,
+      "desa_id": 34,
+      "nomor_urut": 2,
+      "nama": "M. Syafi S.Pd.I.",
+      "visi": "Membangun Moga yang hijau, bersih, dan sehat dengan mengedepankan pembangunan berkelanjutan dan pelestarian lingkungan.",
+      "misi": [
+        "Membangun sarana olahraga pemuda desa",
+        "Mendirikan bank sampah unit desa",
+        "Mempermudah perizinan usaha mikro dan kecil",
+        "Membangun infrastruktur dasar yang merata hingga dusun terpencil",
+        "Membangun instalasi pengolahan air bersih untuk seluruh warga"
+      ],
+      "pendidikan": "S3",
+      "umur": 45
+    },
+    {
+      "id": 100,
+      "desa_id": 34,
+      "nomor_urut": 3,
+      "nama": "Sutrisno A.Md.",
+      "visi": "Mewujudkan Moga yang sejahtera, berkeadilan, dan bermartabat melalui pembangunan yang partisipatif dan transparan.",
+      "misi": [
+        "Menerapkan sistem pemerintahan desa berbasis digital",
+        "Menyelenggarakan musrenbangdes yang aspiratif dan inklusif",
+        "Mengoptimalkan dana desa untuk program yang langsung dirasakan masyarakat",
+        "Mengadakan festival desa tahunan untuk promosi potensi lokal"
+      ],
+      "pendidikan": "SD",
+      "umur": 38
+    },
+    {
+      "id": 101,
+      "desa_id": 35,
+      "nomor_urut": 1,
+      "nama": "Joko",
+      "visi": "Menjadikan Pepedan sebagai lumbung pangan dan pusat agroindustri yang berdaya saing tinggi.",
+      "misi": [
+        "Mendirikan bank sampah unit desa",
+        "Menghidupkan kembali kesenian dan budaya lokal",
+        "Memfasilitasi pelatihan digital marketing bagi pelaku UMKM",
+        "Menerapkan sistem pemerintahan desa berbasis digital",
+        "Meningkatkan kualitas infrastruktur jalan desa dan irigasi pertanian"
+      ],
+      "pendidikan": "D1/D3",
+      "umur": 57
+    },
+    {
+      "id": 102,
+      "desa_id": 35,
+      "nomor_urut": 2,
+      "nama": "Amin S.Pd.I.",
+      "visi": "Menjadikan Pepedan sebagai lumbung pangan dan pusat agroindustri yang berdaya saing tinggi.",
+      "misi": [
+        "Mengembangkan desa wisata berbasis potensi lokal",
+        "Mempermudah perizinan usaha mikro dan kecil",
+        "Membangun sarana olahraga pemuda desa"
+      ],
+      "pendidikan": "SMA/SMK",
+      "umur": 38
+    },
+    {
+      "id": 103,
+      "desa_id": 35,
+      "nomor_urut": 3,
+      "nama": "Karsono",
+      "visi": "Menjadikan Pepedan sebagai desa wisata dan pusat pertumbuhan ekonomi di Kecamatan Moga yang berkelanjutan.",
+      "misi": [
+        "Meningkatkan kualitas infrastruktur jalan desa dan irigasi pertanian",
+        "Menghijaukan desa dengan program satu rumah satu pohon",
+        "Meningkatkan keamanan lingkungan dengan poskamling dan siskamling",
+        "Menyediakan beasiswa pendidikan bagi anak tidak mampu",
+        "Mengoptimalkan dana desa untuk program yang langsung dirasakan masyarakat"
+      ],
+      "pendidikan": "S2",
+      "umur": 43
+    },
+    {
+      "id": 104,
+      "desa_id": 36,
+      "nomor_urut": 1,
+      "nama": "Sutarno",
+      "visi": "Mewujudkan masyarakat Walangsanga yang cerdas, sehat, dan sejahtera melalui pendidikan, kesehatan, dan ekonomi yang merata.",
+      "misi": [
+        "Menerapkan sistem anggaran desa yang transparan dan partisipatif",
+        "Memberdayakan perempuan melalui pelatihan keterampilan dan koperasi wanita",
+        "Membangun taman bacaan masyarakat di setiap RW",
+        "Mengadakan program desa bebas stunting",
+        "Mempermudah perizinan usaha mikro dan kecil"
+      ],
+      "pendidikan": "SD",
+      "umur": 32
+    },
+    {
+      "id": 105,
+      "desa_id": 36,
+      "nomor_urut": 2,
+      "nama": "Yuni S.T.",
+      "visi": "Mewujudkan Walangsanga digital yang modern, produktif, dan inklusif melalui tata kelola pemerintahan yang baik.",
+      "misi": [
+        "Mengoptimalkan dana desa untuk program yang langsung dirasakan masyarakat",
+        "Mengadakan program bedah rumah untuk warga kurang mampu",
+        "Menghidupkan kembali kesenian dan budaya lokal",
+        "Mengadakan pelatihan pertanian organik bagi petani",
+        "Mengembangkan desa wisata berbasis potensi lokal"
+      ],
+      "pendidikan": "D1/D3",
+      "umur": 47
+    },
+    {
+      "id": 106,
+      "desa_id": 36,
+      "nomor_urut": 3,
+      "nama": "Mega S.Sos.",
+      "visi": "Mewujudkan Walangsanga digital yang modern, produktif, dan inklusif melalui tata kelola pemerintahan yang baik.",
+      "misi": [
+        "Membangun instalasi pengolahan air bersih untuk seluruh warga",
+        "Menerapkan sistem pemerintahan desa berbasis digital",
+        "Mengembangkan desa wisata berbasis potensi lokal",
+        "Membangun taman bacaan masyarakat di setiap RW",
+        "Mengadakan program desa bebas stunting"
+      ],
+      "pendidikan": "SMA/SMK",
+      "umur": 39
+    },
+    {
+      "id": 107,
+      "desa_id": 37,
+      "nomor_urut": 1,
+      "nama": "Hendra S.Pd.",
+      "visi": "Mewujudkan masyarakat Pulosari yang cerdas, sehat, dan sejahtera melalui pendidikan, kesehatan, dan ekonomi yang merata.",
+      "misi": [
+        "Meningkatkan layanan kesehatan desa dengan posyandu dan ambulans desa",
+        "Mengadakan pelatihan kewirausahaan bagi pemuda putus sekolah",
+        "Membangun instalasi pengolahan air bersih untuk seluruh warga",
+        "Memperkuat karang taruna sebagai motor penggerak pemuda"
+      ],
+      "pendidikan": "S2",
+      "umur": 35
+    },
+    {
+      "id": 108,
+      "desa_id": 37,
+      "nomor_urut": 2,
+      "nama": "Dewi S.T.",
+      "visi": "Menjadikan Pulosari sebagai lumbung pangan dan pusat agroindustri yang berdaya saing tinggi.",
+      "misi": [
+        "Mengadakan pelatihan kewirausahaan bagi pemuda putus sekolah",
+        "Mengadakan pelatihan pertanian organik bagi petani",
+        "Memperkuat karang taruna sebagai motor penggerak pemuda",
+        "Menghijaukan desa dengan program satu rumah satu pohon"
+      ],
+      "pendidikan": "S1/D4",
+      "umur": 39
+    },
+    {
+      "id": 109,
+      "desa_id": 37,
+      "nomor_urut": 3,
+      "nama": "Eko S.T.",
+      "visi": "Menjadikan Pulosari sebagai desa wisata dan pusat pertumbuhan ekonomi di Kecamatan Pulosari yang berkelanjutan.",
+      "misi": [
+        "Mengembangkan desa wisata berbasis potensi lokal",
+        "Memperkuat pendidikan agama dan TPQ di setiap dusun",
+        "Mengadakan program bedah rumah untuk warga kurang mampu"
+      ],
+      "pendidikan": "SD",
+      "umur": 52
+    },
+    {
+      "id": 110,
+      "desa_id": 38,
+      "nomor_urut": 1,
+      "nama": "Wahyu S.E.",
+      "visi": "Mewujudkan desa Cikendung yang maju, mandiri, dan sejahtera melalui pembangunan infrastruktur berkelanjutan dan pemberdayaan masyarakat.",
+      "misi": [
+        "Mengadakan program bedah rumah untuk warga kurang mampu",
+        "Membangun taman bacaan masyarakat di setiap RW",
+        "Membangun sistem pengelolaan sampah terpadu berbasis masyarakat",
+        "Memberdayakan perempuan melalui pelatihan keterampilan dan koperasi wanita",
+        "Menyelenggarakan musrenbangdes yang aspiratif dan inklusif"
+      ],
+      "pendidikan": "S3",
+      "umur": 45
+    },
+    {
+      "id": 111,
+      "desa_id": 38,
+      "nomor_urut": 2,
+      "nama": "Eko S.E.",
+      "visi": "Mewujudkan Cikendung yang sejahtera, berkeadilan, dan bermartabat melalui pembangunan yang partisipatif dan transparan.",
+      "misi": [
+        "Menerapkan sistem anggaran desa yang transparan dan partisipatif",
+        "Mengadakan program desa bebas stunting",
+        "Menerapkan sistem pemerintahan desa berbasis digital",
+        "Memperkuat pendidikan agama dan TPQ di setiap dusun"
+      ],
+      "pendidikan": "SD",
+      "umur": 38
+    },
+    {
+      "id": 112,
+      "desa_id": 39,
+      "nomor_urut": 1,
+      "nama": "Agus S.Pd.",
+      "visi": "Mewujudkan Gambuhan digital yang modern, produktif, dan inklusif melalui tata kelola pemerintahan yang baik.",
+      "misi": [
+        "Menyediakan beasiswa pendidikan bagi anak tidak mampu",
+        "Mengadakan pelatihan pertanian organik bagi petani",
+        "Memberdayakan perempuan melalui pelatihan keterampilan dan koperasi wanita",
+        "Menghidupkan kembali kesenian dan budaya lokal"
+      ],
+      "pendidikan": "SD",
+      "umur": 34
+    },
+    {
+      "id": 113,
+      "desa_id": 39,
+      "nomor_urut": 2,
+      "nama": "Dwi",
+      "visi": "Mewujudkan Gambuhan yang sejahtera, berkeadilan, dan bermartabat melalui pembangunan yang partisipatif dan transparan.",
+      "misi": [
+        "Menyediakan beasiswa pendidikan bagi anak tidak mampu",
+        "Mengoptimalkan dana desa untuk program yang langsung dirasakan masyarakat",
+        "Meningkatkan layanan kesehatan desa dengan posyandu dan ambulans desa",
+        "Membangun instalasi pengolahan air bersih untuk seluruh warga"
+      ],
+      "pendidikan": "S3",
+      "umur": 43
+    },
+    {
+      "id": 114,
+      "desa_id": 39,
+      "nomor_urut": 3,
+      "nama": "Karsono S.H., M.H.",
+      "visi": "Mewujudkan Gambuhan yang sejahtera, berkeadilan, dan bermartabat melalui pembangunan yang partisipatif dan transparan.",
+      "misi": [
+        "Memperkuat karang taruna sebagai motor penggerak pemuda",
+        "Menghijaukan desa dengan program satu rumah satu pohon",
+        "Memfasilitasi pelatihan digital marketing bagi pelaku UMKM"
+      ],
+      "pendidikan": "D1/D3",
+      "umur": 59
+    },
+    {
+      "id": 115,
+      "desa_id": 40,
+      "nomor_urut": 1,
+      "nama": "Zainal S.H., M.H.",
+      "visi": "Mewujudkan Randudongkal digital yang modern, produktif, dan inklusif melalui tata kelola pemerintahan yang baik.",
+      "misi": [
+        "Mengadakan pelatihan pertanian organik bagi petani",
+        "Mendirikan bank sampah unit desa",
+        "Mengembangkan UMKM dan pasar desa untuk meningkatkan perekonomian warga",
+        "Mengadakan pelatihan kewirausahaan bagi pemuda putus sekolah"
+      ],
+      "pendidikan": "SD",
+      "umur": 60
+    },
+    {
+      "id": 116,
+      "desa_id": 40,
+      "nomor_urut": 2,
+      "nama": "Pujiono S.T.",
+      "visi": "Mewujudkan masyarakat Randudongkal yang cerdas, sehat, dan sejahtera melalui pendidikan, kesehatan, dan ekonomi yang merata.",
+      "misi": [
+        "Menghidupkan kembali kesenian dan budaya lokal",
+        "Menyediakan beasiswa pendidikan bagi anak tidak mampu",
+        "Memperkuat pendidikan agama dan TPQ di setiap dusun",
+        "Mengoptimalkan dana desa untuk program yang langsung dirasakan masyarakat"
+      ],
+      "pendidikan": "SMP",
+      "umur": 47
+    },
+    {
+      "id": 117,
+      "desa_id": 40,
+      "nomor_urut": 3,
+      "nama": "Muhammad S.Pd.I.",
+      "visi": "Mewujudkan desa Randudongkal yang maju, mandiri, dan sejahtera melalui pembangunan infrastruktur berkelanjutan dan pemberdayaan masyarakat.",
+      "misi": [
+        "Mengadakan program desa bebas stunting",
+        "Membangun taman bacaan masyarakat di setiap RW",
+        "Mendirikan bank sampah unit desa",
+        "Menerapkan sistem anggaran desa yang transparan dan partisipatif"
+      ],
+      "pendidikan": "SMA/SMK",
+      "umur": 31
+    },
+    {
+      "id": 118,
+      "desa_id": 41,
+      "nomor_urut": 1,
+      "nama": "Yuni",
+      "visi": "Menjadikan Karangmoncol sebagai desa wisata dan pusat pertumbuhan ekonomi di Kecamatan Randudongkal yang berkelanjutan.",
+      "misi": [
+        "Menyelenggarakan musrenbangdes yang aspiratif dan inklusif",
+        "Mengadakan program desa bebas stunting",
+        "Menyediakan beasiswa pendidikan bagi anak tidak mampu",
+        "Menghidupkan kembali kesenian dan budaya lokal",
+        "Mengoptimalkan dana desa untuk program yang langsung dirasakan masyarakat"
+      ],
+      "pendidikan": "SMA/SMK",
+      "umur": 55
+    },
+    {
+      "id": 119,
+      "desa_id": 41,
+      "nomor_urut": 2,
+      "nama": "Tumini S.H., M.H.",
+      "visi": "Mewujudkan masyarakat Karangmoncol yang cerdas, sehat, dan sejahtera melalui pendidikan, kesehatan, dan ekonomi yang merata.",
+      "misi": [
+        "Meningkatkan layanan kesehatan desa dengan posyandu dan ambulans desa",
+        "Membangun instalasi pengolahan air bersih untuk seluruh warga",
+        "Mengoptimalkan dana desa untuk program yang langsung dirasakan masyarakat",
+        "Memberdayakan perempuan melalui pelatihan keterampilan dan koperasi wanita"
+      ],
+      "pendidikan": "SMP",
+      "umur": 59
+    },
+    {
+      "id": 120,
+      "desa_id": 42,
+      "nomor_urut": 1,
+      "nama": "Dwi S.Pd.",
+      "visi": "Mewujudkan desa Semaya yang maju, mandiri, dan sejahtera melalui pembangunan infrastruktur berkelanjutan dan pemberdayaan masyarakat.",
+      "misi": [
+        "Mempermudah perizinan usaha mikro dan kecil",
+        "Mengadakan program bedah rumah untuk warga kurang mampu",
+        "Mendirikan bank sampah unit desa"
+      ],
+      "pendidikan": "S2",
+      "umur": 56
+    },
+    {
+      "id": 121,
+      "desa_id": 42,
+      "nomor_urut": 2,
+      "nama": "Mujiono S.H.",
+      "visi": "Menjadikan Semaya sebagai lumbung pangan dan pusat agroindustri yang berdaya saing tinggi.",
+      "misi": [
+        "Mengadakan program desa bebas stunting",
+        "Membangun taman bacaan masyarakat di setiap RW",
+        "Mengadakan program bedah rumah untuk warga kurang mampu"
+      ],
+      "pendidikan": "S2",
+      "umur": 42
+    },
+    {
+      "id": 122,
+      "desa_id": 42,
+      "nomor_urut": 3,
+      "nama": "Wahyu S.Pd., M.Pd.",
+      "visi": "Membangun Semaya yang hijau, bersih, dan sehat dengan mengedepankan pembangunan berkelanjutan dan pelestarian lingkungan.",
+      "misi": [
+        "Mengadakan program desa bebas stunting",
+        "Menyediakan beasiswa pendidikan bagi anak tidak mampu",
+        "Mendirikan bank sampah unit desa",
+        "Mengembangkan UMKM dan pasar desa untuk meningkatkan perekonomian warga"
+      ],
+      "pendidikan": "D1/D3",
+      "umur": 53
+    },
+    {
+      "id": 123,
+      "desa_id": 43,
+      "nomor_urut": 1,
+      "nama": "Karsono S.H.",
+      "visi": "Mewujudkan desa Ulujami yang maju, mandiri, dan sejahtera melalui pembangunan infrastruktur berkelanjutan dan pemberdayaan masyarakat.",
+      "misi": [
+        "Mengoptimalkan dana desa untuk program yang langsung dirasakan masyarakat",
+        "Menghidupkan kembali kesenian dan budaya lokal",
+        "Mengadakan festival desa tahunan untuk promosi potensi lokal"
+      ],
+      "pendidikan": "S3",
+      "umur": 48
+    },
+    {
+      "id": 124,
+      "desa_id": 43,
+      "nomor_urut": 2,
+      "nama": "Suparman S.E.",
+      "visi": "Menjadikan Ulujami sebagai desa wisata dan pusat pertumbuhan ekonomi di Kecamatan Ulujami yang berkelanjutan.",
+      "misi": [
+        "Mengembangkan UMKM dan pasar desa untuk meningkatkan perekonomian warga",
+        "Memperkuat karang taruna sebagai motor penggerak pemuda",
+        "Memperkuat pendidikan agama dan TPQ di setiap dusun",
+        "Menerapkan sistem anggaran desa yang transparan dan partisipatif",
+        "Menghijaukan desa dengan program satu rumah satu pohon"
+      ],
+      "pendidikan": "S2",
+      "umur": 44
+    },
+    {
+      "id": 125,
+      "desa_id": 43,
+      "nomor_urut": 3,
+      "nama": "Wahyu S.Pd.I.",
+      "visi": "Mewujudkan Ulujami yang sejahtera, berkeadilan, dan bermartabat melalui pembangunan yang partisipatif dan transparan.",
+      "misi": [
+        "Memberdayakan perempuan melalui pelatihan keterampilan dan koperasi wanita",
+        "Mengadakan festival desa tahunan untuk promosi potensi lokal",
+        "Menerapkan sistem anggaran desa yang transparan dan partisipatif",
+        "Menyediakan beasiswa pendidikan bagi anak tidak mampu"
+      ],
+      "pendidikan": "D1/D3",
+      "umur": 41
+    },
+    {
+      "id": 126,
+      "desa_id": 44,
+      "nomor_urut": 1,
+      "nama": "Sari S.Sos.",
+      "visi": "Menjadikan Pagergunung sebagai desa yang religius, berkarakter, dan berdaya saing melalui pengembangan sumber daya manusia dan ekonomi kerakyatan.",
+      "misi": [
+        "Menerapkan sistem pemerintahan desa berbasis digital",
+        "Membangun kerjasama dengan perusahaan swasta untuk penyerapan tenaga kerja",
+        "Membangun taman bacaan masyarakat di setiap RW"
+      ],
+      "pendidikan": "D1/D3",
+      "umur": 39
+    },
+    {
+      "id": 127,
+      "desa_id": 44,
+      "nomor_urut": 2,
+      "nama": "Maryono A.Md.",
+      "visi": "Membangun Pagergunung yang hijau, bersih, dan sehat dengan mengedepankan pembangunan berkelanjutan dan pelestarian lingkungan.",
+      "misi": [
+        "Mengadakan program desa bebas stunting",
+        "Menyediakan beasiswa pendidikan bagi anak tidak mampu",
+        "Menerapkan sistem pemerintahan desa berbasis digital"
+      ],
+      "pendidikan": "SMA/SMK",
+      "umur": 40
+    },
+    {
+      "id": 128,
+      "desa_id": 44,
+      "nomor_urut": 3,
+      "nama": "Agus",
+      "visi": "Mewujudkan Pagergunung digital yang modern, produktif, dan inklusif melalui tata kelola pemerintahan yang baik.",
+      "misi": [
+        "Mengadakan festival desa tahunan untuk promosi potensi lokal",
+        "Meningkatkan kualitas infrastruktur jalan desa dan irigasi pertanian",
+        "Menghidupkan kembali kesenian dan budaya lokal",
+        "Menyelenggarakan musrenbangdes yang aspiratif dan inklusif",
+        "Membangun instalasi pengolahan air bersih untuk seluruh warga"
+      ],
+      "pendidikan": "D1/D3",
+      "umur": 43
+    },
+    {
+      "id": 129,
+      "desa_id": 45,
+      "nomor_urut": 1,
+      "nama": "Dewi S.Pd., M.Pd.",
+      "visi": "Membangun Pesantren yang agamis, aman, dan nyaman dengan mengedepankan gotong royong dan nilai-nilai kearifan lokal.",
+      "misi": [
+        "Memperkuat karang taruna sebagai motor penggerak pemuda",
+        "Menerapkan sistem anggaran desa yang transparan dan partisipatif",
+        "Memberdayakan perempuan melalui pelatihan keterampilan dan koperasi wanita",
+        "Mengadakan program desa bebas stunting",
+        "Mengembangkan UMKM dan pasar desa untuk meningkatkan perekonomian warga"
+      ],
+      "pendidikan": "SMP",
+      "umur": 38
+    },
+    {
+      "id": 130,
+      "desa_id": 45,
+      "nomor_urut": 2,
+      "nama": "Sutarno S.Pd.I.",
+      "visi": "Menjadikan Pesantren sebagai desa wisata dan pusat pertumbuhan ekonomi di Kecamatan Ulujami yang berkelanjutan.",
+      "misi": [
+        "Mengalokasikan dana desa untuk program prioritas masyarakat",
+        "Membangun taman bacaan masyarakat di setiap RW",
+        "Menerapkan sistem anggaran desa yang transparan dan partisipatif",
+        "Meningkatkan layanan kesehatan desa dengan posyandu dan ambulans desa"
+      ],
+      "pendidikan": "SD",
+      "umur": 50
+    },
+    {
+      "id": 131,
+      "desa_id": 46,
+      "nomor_urut": 1,
+      "nama": "Kartono S.Pd.I.",
+      "visi": "Menjadikan Warungpring sebagai desa wisata dan pusat pertumbuhan ekonomi di Kecamatan Warungpring yang berkelanjutan.",
+      "misi": [
+        "Meningkatkan kualitas infrastruktur jalan desa dan irigasi pertanian",
+        "Membangun instalasi pengolahan air bersih untuk seluruh warga",
+        "Membangun kerjasama dengan perusahaan swasta untuk penyerapan tenaga kerja",
+        "Menyediakan beasiswa pendidikan bagi anak tidak mampu",
+        "Mengoptimalkan dana desa untuk program yang langsung dirasakan masyarakat"
+      ],
+      "pendidikan": "S3",
+      "umur": 59
+    },
+    {
+      "id": 132,
+      "desa_id": 46,
+      "nomor_urut": 2,
+      "nama": "Agus S.E., M.M.",
+      "visi": "Menjadikan Warungpring sebagai desa yang religius, berkarakter, dan berdaya saing melalui pengembangan sumber daya manusia dan ekonomi kerakyatan.",
+      "misi": [
+        "Mengadakan festival desa tahunan untuk promosi potensi lokal",
+        "Membangun sistem pengelolaan sampah terpadu berbasis masyarakat",
+        "Menerapkan sistem anggaran desa yang transparan dan partisipatif",
+        "Membangun infrastruktur dasar yang merata hingga dusun terpencil",
+        "Membangun taman bacaan masyarakat di setiap RW"
+      ],
+      "pendidikan": "SMA/SMK",
+      "umur": 46
+    },
+    {
+      "id": 133,
+      "desa_id": 47,
+      "nomor_urut": 1,
+      "nama": "M. Khoir S.E., M.M.",
+      "visi": "Menjadikan Datar sebagai lumbung pangan dan pusat agroindustri yang berdaya saing tinggi.",
+      "misi": [
+        "Mengadakan program desa bebas stunting",
+        "Membangun instalasi pengolahan air bersih untuk seluruh warga",
+        "Membangun sistem pengelolaan sampah terpadu berbasis masyarakat"
+      ],
+      "pendidikan": "D1/D3",
+      "umur": 36
+    },
+    {
+      "id": 134,
+      "desa_id": 47,
+      "nomor_urut": 2,
+      "nama": "Karsono S.Pd., M.Pd.",
+      "visi": "Membangun Datar yang bersih, transparan, dan partisipatif menuju masyarakat yang adil dan makmur.",
+      "misi": [
+        "Membangun sarana olahraga pemuda desa",
+        "Memperkuat karang taruna sebagai motor penggerak pemuda",
+        "Mempermudah perizinan usaha mikro dan kecil"
+      ],
+      "pendidikan": "S3",
+      "umur": 43
+    },
+    {
+      "id": 135,
+      "desa_id": 47,
+      "nomor_urut": 3,
+      "nama": "Sari",
+      "visi": "Membangun Datar yang hijau, bersih, dan sehat dengan mengedepankan pembangunan berkelanjutan dan pelestarian lingkungan.",
+      "misi": [
+        "Mengadakan festival desa tahunan untuk promosi potensi lokal",
+        "Meningkatkan kualitas infrastruktur jalan desa dan irigasi pertanian",
+        "Mengadakan program bedah rumah untuk warga kurang mampu",
+        "Mengadakan pelatihan kewirausahaan bagi pemuda putus sekolah"
+      ],
+      "pendidikan": "SMA/SMK",
+      "umur": 56
+    },
+    {
+      "id": 136,
+      "desa_id": 48,
+      "nomor_urut": 1,
+      "nama": "Dwi S.E., M.M.",
+      "visi": "Membangun Mereng yang hijau, bersih, dan sehat dengan mengedepankan pembangunan berkelanjutan dan pelestarian lingkungan.",
+      "misi": [
+        "Mengembangkan desa wisata berbasis potensi lokal",
+        "Menerapkan sistem pemerintahan desa berbasis digital",
+        "Membangun instalasi pengolahan air bersih untuk seluruh warga",
+        "Memperkuat karang taruna sebagai motor penggerak pemuda"
+      ],
+      "pendidikan": "S1/D4",
+      "umur": 42
+    },
+    {
+      "id": 137,
+      "desa_id": 48,
+      "nomor_urut": 2,
+      "nama": "Sutrisno S.Sos.",
+      "visi": "Mewujudkan masyarakat Mereng yang cerdas, sehat, dan sejahtera melalui pendidikan, kesehatan, dan ekonomi yang merata.",
+      "misi": [
+        "Mengoptimalkan dana desa untuk program yang langsung dirasakan masyarakat",
+        "Mengadakan pelatihan pertanian organik bagi petani",
+        "Memfasilitasi pelatihan digital marketing bagi pelaku UMKM",
+        "Menyelenggarakan musrenbangdes yang aspiratif dan inklusif",
+        "Memperkuat karang taruna sebagai motor penggerak pemuda"
+      ],
+      "pendidikan": "D1/D3",
+      "umur": 31
+    },
+    {
+      "id": 138,
+      "desa_id": 48,
+      "nomor_urut": 3,
+      "nama": "Amin",
+      "visi": "Menjadikan Mereng sebagai lumbung pangan dan pusat agroindustri yang berdaya saing tinggi.",
+      "misi": [
+        "Membangun infrastruktur dasar yang merata hingga dusun terpencil",
+        "Mempermudah perizinan usaha mikro dan kecil",
+        "Memfasilitasi pelatihan digital marketing bagi pelaku UMKM",
+        "Menghidupkan kembali kesenian dan budaya lokal",
+        "Mengadakan festival desa tahunan untuk promosi potensi lokal"
+      ],
+      "pendidikan": "S2",
+      "umur": 34
+    },
+    {
+      "id": 139,
+      "desa_id": 49,
+      "nomor_urut": 1,
+      "nama": "Siti S.Pd.I.",
+      "visi": "Membangun Watukumpul yang hijau, bersih, dan sehat dengan mengedepankan pembangunan berkelanjutan dan pelestarian lingkungan.",
+      "misi": [
+        "Menerapkan sistem pemerintahan desa berbasis digital",
+        "Menyelenggarakan musrenbangdes yang aspiratif dan inklusif",
+        "Meningkatkan layanan kesehatan desa dengan posyandu dan ambulans desa",
+        "Mengadakan program desa bebas stunting",
+        "Menghijaukan desa dengan program satu rumah satu pohon"
+      ],
+      "pendidikan": "D1/D3",
+      "umur": 30
+    },
+    {
+      "id": 140,
+      "desa_id": 49,
+      "nomor_urut": 2,
+      "nama": "Suyatno S.Pd.I.",
+      "visi": "Mewujudkan Watukumpul digital yang modern, produktif, dan inklusif melalui tata kelola pemerintahan yang baik.",
+      "misi": [
+        "Membangun sistem pengelolaan sampah terpadu berbasis masyarakat",
+        "Menyediakan beasiswa pendidikan bagi anak tidak mampu",
+        "Menerapkan sistem anggaran desa yang transparan dan partisipatif",
+        "Mempermudah perizinan usaha mikro dan kecil",
+        "Membangun sarana olahraga pemuda desa"
+      ],
+      "pendidikan": "SMA/SMK",
+      "umur": 49
+    },
+    {
+      "id": 141,
+      "desa_id": 49,
+      "nomor_urut": 3,
+      "nama": "Darsono A.Md.",
+      "visi": "Menjadikan Watukumpul sebagai desa yang religius, berkarakter, dan berdaya saing melalui pengembangan sumber daya manusia dan ekonomi kerakyatan.",
+      "misi": [
+        "Menyelenggarakan musrenbangdes yang aspiratif dan inklusif",
+        "Menghidupkan kembali kesenian dan budaya lokal",
+        "Membangun instalasi pengolahan air bersih untuk seluruh warga",
+        "Memfasilitasi pelatihan digital marketing bagi pelaku UMKM"
+      ],
+      "pendidikan": "SMA/SMK",
+      "umur": 50
+    },
+    {
+      "id": 142,
+      "desa_id": 50,
+      "nomor_urut": 1,
+      "nama": "Purwanto S.E.",
+      "visi": "Mewujudkan Bogor yang sejahtera, berkeadilan, dan bermartabat melalui pembangunan yang partisipatif dan transparan.",
+      "misi": [
+        "Mengoptimalkan dana desa untuk program yang langsung dirasakan masyarakat",
+        "Memberdayakan perempuan melalui pelatihan keterampilan dan koperasi wanita",
+        "Menghidupkan kembali kesenian dan budaya lokal"
+      ],
+      "pendidikan": "SMA/SMK",
+      "umur": 37
+    },
+    {
+      "id": 143,
+      "desa_id": 50,
+      "nomor_urut": 2,
+      "nama": "Mardiyono S.Pd.",
+      "visi": "Mewujudkan Bogor digital yang modern, produktif, dan inklusif melalui tata kelola pemerintahan yang baik.",
+      "misi": [
+        "Memperkuat karang taruna sebagai motor penggerak pemuda",
+        "Memberdayakan perempuan melalui pelatihan keterampilan dan koperasi wanita",
+        "Membangun taman bacaan masyarakat di setiap RW"
+      ],
+      "pendidikan": "S3",
+      "umur": 33
+    },
+    {
+      "id": 144,
+      "desa_id": 50,
+      "nomor_urut": 3,
+      "nama": "Rudi S.Pd.I.",
+      "visi": "Menjadikan Bogor sebagai desa wisata dan pusat pertumbuhan ekonomi di Kecamatan Watukumpul yang berkelanjutan.",
+      "misi": [
+        "Mengembangkan UMKM dan pasar desa untuk meningkatkan perekonomian warga",
+        "Menerapkan sistem pemerintahan desa berbasis digital",
+        "Mempermudah perizinan usaha mikro dan kecil"
+      ],
+      "pendidikan": "SD",
+      "umur": 39
+    }
+  ]
+}
