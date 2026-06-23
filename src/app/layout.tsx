@@ -1,24 +1,21 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import type { Metadata } from "next"
+import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "FastAPI + EdgeOne Pages",
-  description: "Deploy high-performance FastAPI applications as serverless functions on EdgeOne Pages. With automatic OpenAPI docs, Pydantic validation, and async support.",
-};
+  title: "Paham Kades — Cek Kecocokan Calon Kepala Desa Pemalang",
+  description:
+    "Cari, bandingkan, dan cek kecocokan calon kepala desa se-Kabupaten Pemalang berdasarkan visi, misi, dan kriteria pilihan Anda.",
+}
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en-US">
+    <html lang="id">
       <head>
-        <link rel="icon" href="/fastapi-favicon.svg" />
+        <link rel="icon" href="/favicon.svg" />
       </head>
-      <body className="antialiased">
-        {children}
-      </body>
+      <body className="antialiased" suppressHydrationWarning>{children}</body>
     </html>
-  );
+  )
 }

@@ -1,30 +1,21 @@
 @import "tailwindcss";
 
-/* ============================================
-   EdgeOne Pages Template Design System
-   Framework: FastAPI
-   Theme: Teal/Cyan - Modern & High Performance
-   ============================================ */
-
 :root {
-  /* Base Colors */
   --background: #000000;
   --foreground: #ffffff;
-  
-  /* Framework Brand Colors - FastAPI */
-  --brand-primary: #009688;
-  --brand-secondary: #05998B;
-  --brand-accent: #00BFA5;
-  --brand-primary-rgb: 0, 150, 136;
-  --brand-secondary-rgb: 5, 153, 139;
-  --brand-accent-rgb: 0, 191, 165;
-  
-  /* UI Colors */
+
+  --brand-primary: #DC2626;
+  --brand-secondary: #991B1B;
+  --brand-accent: #FCD34D;
+  --brand-primary-rgb: 220, 38, 38;
+  --brand-secondary-rgb: 153, 27, 27;
+  --brand-accent-rgb: 252, 211, 77;
+
   --card: #0a0a0a;
   --card-foreground: #ffffff;
   --popover: #111111;
   --popover-foreground: #ffffff;
-  --primary: #1c66e5;
+  --primary: #DC2626;
   --primary-foreground: #ffffff;
   --secondary: #1a1a1a;
   --secondary-foreground: #ffffff;
@@ -37,10 +28,9 @@
   --border: #1f1f1f;
   --input: #1f1f1f;
   --ring: var(--brand-primary);
-  
-  /* Glassmorphism */
-  --glass-bg: rgba(0, 150, 136, 0.08);
-  --glass-border: rgba(0, 191, 165, 0.15);
+
+  --glass-bg: rgba(220, 38, 38, 0.08);
+  --glass-border: rgba(252, 211, 77, 0.15);
   --glass-blur: 12px;
 }
 
@@ -75,10 +65,6 @@ body {
   overflow-x: hidden;
 }
 
-/* ============================================
-   Gradient Orbs - FastAPI Teal/Cyan with Pulse
-   ============================================ */
-
 .gradient-orb {
   position: absolute;
   border-radius: 50%;
@@ -96,31 +82,21 @@ body {
   background: radial-gradient(circle, rgba(var(--brand-accent-rgb), 0.5) 0%, transparent 70%);
 }
 
-/* Pulsing ring effect */
 .pulse-ring {
   position: absolute;
   border-radius: 50%;
   border: 1px solid rgba(var(--brand-accent-rgb), 0.3);
   animation: pulse-expand 3s ease-out infinite;
+  pointer-events: none;
 }
 
 @keyframes pulse-expand {
-  0% {
-    transform: scale(0.8);
-    opacity: 0.8;
-  }
-  100% {
-    transform: scale(2);
-    opacity: 0;
-  }
+  0%   { transform: scale(0.8); opacity: 0.8; }
+  100% { transform: scale(2);   opacity: 0; }
 }
 
-/* ============================================
-   Glassmorphism Card - FastAPI Modern Style
-   ============================================ */
-
 .glass-card {
-  background: linear-gradient(135deg, rgba(17, 17, 17, 0.9) 0%, rgba(0, 150, 136, 0.1) 100%);
+  background: linear-gradient(135deg, rgba(17, 17, 17, 0.9) 0%, rgba(var(--brand-primary-rgb), 0.1) 100%);
   backdrop-filter: blur(var(--glass-blur));
   -webkit-backdrop-filter: blur(var(--glass-blur));
   border: 1px solid rgba(var(--brand-accent-rgb), 0.15);
@@ -132,13 +108,9 @@ body {
   box-shadow: 0 0 40px rgba(var(--brand-accent-rgb), 0.15);
 }
 
-/* ============================================
-   Feature Card with Lightning Effect
-   ============================================ */
-
 .feature-card {
   position: relative;
-  background: linear-gradient(135deg, rgba(17, 17, 17, 0.95) 0%, rgba(0, 150, 136, 0.1) 100%);
+  background: linear-gradient(135deg, rgba(17, 17, 17, 0.95) 0%, rgba(var(--brand-primary-rgb), 0.1) 100%);
   border: 1px solid rgba(var(--brand-accent-rgb), 0.1);
   border-radius: 12px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -148,9 +120,7 @@ body {
 .feature-card::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   height: 2px;
   background: linear-gradient(90deg, transparent, var(--brand-accent), transparent);
   opacity: 0;
@@ -167,76 +137,8 @@ body {
   opacity: 1;
 }
 
-/* ============================================
-   Code Block - FastAPI Teal Theme
-   ============================================ */
-
-.code-block {
-  background: linear-gradient(135deg, #0d1117 0%, rgba(0, 150, 136, 0.15) 100%);
-  border: 1px solid rgba(var(--brand-accent-rgb), 0.2);
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.code-block-header {
-  background: rgba(var(--brand-primary-rgb), 0.15);
-  border-bottom: 1px solid rgba(var(--brand-accent-rgb), 0.2);
-  padding: 12px 16px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.code-block pre {
-  margin: 0;
-  padding: 16px;
-  overflow-x: auto;
-}
-
-/* ============================================
-   FastAPI Lightning Badge
-   ============================================ */
-
-.framework-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 20px;
-  border-radius: 9999px;
-  font-size: 14px;
-  font-weight: 500;
-  background: linear-gradient(135deg, 
-    rgba(var(--brand-primary-rgb), 0.3) 0%, 
-    rgba(var(--brand-accent-rgb), 0.2) 100%);
-  border: 1px solid rgba(var(--brand-accent-rgb), 0.4);
-  position: relative;
-  overflow: hidden;
-}
-
-.framework-badge::before {
-  content: '';
-  position: absolute;
-  inset: -50%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(var(--brand-accent-rgb), 0.3),
-    transparent
-  );
-  animation: shimmer 2s infinite;
-}
-
-@keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
-
-/* ============================================
-   Button Styles - FastAPI Theme
-   ============================================ */
-
 .btn-primary {
-  background: linear-gradient(135deg, #1c66e5 0%, #1d4ed8 100%);
+  background: linear-gradient(135deg, #DC2626 0%, #991B1B 100%);
   color: white;
   border: none;
   position: relative;
@@ -255,7 +157,7 @@ body {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(28, 102, 229, 0.3), 0 0 20px rgba(var(--brand-accent-rgb), 0.2);
+  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3), 0 0 20px rgba(var(--brand-accent-rgb), 0.2);
 }
 
 .btn-primary:hover::after {
@@ -275,47 +177,31 @@ body {
   box-shadow: 0 0 20px rgba(var(--brand-accent-rgb), 0.2);
 }
 
-/* ============================================
-   Header/Footer Borders - Teal Gradient
-   ============================================ */
-
-.header-border {
-  position: relative;
-}
+.header-border { position: relative; }
 
 .header-border::after {
   content: '';
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  bottom: 0; left: 0; right: 0;
   height: 1px;
-  background: linear-gradient(90deg, 
-    transparent 0%, 
-    rgba(var(--brand-accent-rgb), 0.6) 50%, 
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(var(--brand-accent-rgb), 0.6) 50%,
     transparent 100%);
 }
 
-.footer-border {
-  position: relative;
-}
+.footer-border { position: relative; }
 
 .footer-border::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   height: 1px;
-  background: linear-gradient(90deg, 
-    transparent 0%, 
-    rgba(var(--brand-accent-rgb), 0.6) 50%, 
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(var(--brand-accent-rgb), 0.6) 50%,
     transparent 100%);
 }
-
-/* ============================================
-   Lightning Bolt Animation
-   ============================================ */
 
 .lightning-bolt {
   position: absolute;
@@ -329,65 +215,29 @@ body {
   92%, 94%, 96% { opacity: 0.15; }
 }
 
-/* ============================================
-   Animations
-   ============================================ */
-
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  50%      { transform: translateY(-10px); }
 }
 
 @keyframes pulse-glow {
   0%, 100% { opacity: 0.4; }
-  50% { opacity: 0.7; }
+  50%      { opacity: 0.7; }
 }
 
 @keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 3s ease-in-out infinite;
-}
-
-.animate-fade-in-up {
-  animation: fade-in-up 0.6s ease-out forwards;
-}
+.animate-float       { animation: float 6s ease-in-out infinite; }
+.animate-pulse-glow  { animation: pulse-glow 3s ease-in-out infinite; }
+.animate-fade-in-up  { animation: fade-in-up 0.6s ease-out forwards; }
 
 .animation-delay-100 { animation-delay: 100ms; }
 .animation-delay-200 { animation-delay: 200ms; }
 .animation-delay-300 { animation-delay: 300ms; }
 .animation-delay-400 { animation-delay: 400ms; }
-
-/* ============================================
-   API Response
-   ============================================ */
-
-.api-response {
-  background: linear-gradient(135deg, #0d1117 0%, rgba(0, 150, 136, 0.1) 100%);
-  border: 1px solid rgba(34, 197, 94, 0.3);
-  border-radius: 8px;
-}
-
-.api-response pre {
-  color: #22c55e;
-}
-
-/* ============================================
-   Icon Glow Effect
-   ============================================ */
 
 .icon-glow {
   position: relative;
@@ -410,16 +260,12 @@ body {
   opacity: 1;
 }
 
-/* ============================================
-   Responsive
-   ============================================ */
-
 @media (max-width: 768px) {
   .gradient-orb {
     filter: blur(60px);
     opacity: 0.3;
   }
-  
+
   .feature-card:hover {
     transform: none;
   }
