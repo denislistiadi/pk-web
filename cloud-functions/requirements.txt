@@ -1,2 +1,2 @@
-fastapi>=0.115.0
-pydantic>=2.0.0
+# No external dependencies — stdlib-only WSGI app.
+# Packaged and deployed to EdgeOne Pages Cloud Functions.

@@ -1,4 +1,7 @@
-import sqlite3, json, os
+import sqlite3, json, os, sys
+
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "lib"))
+from tfidf import compute_tf
 
 DB_PATH = os.path.join(os.path.dirname(__file__), "pahamkades.db")
 SEED_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "seed-data.json")
@@ -35,6 +38,7 @@ def seed():
             pendidikan TEXT NOT NULL,
             umur INTEGER NOT NULL,
             foto_url TEXT,
+            tf_json TEXT NOT NULL DEFAULT '{}',
             FOREIGN KEY (desa_id) REFERENCES desa(id)
         );
     """)
@@ -47,9 +51,10 @@ def seed():
     for d in data["desa"]:
         cur.execute("INSERT INTO desa (id, nama, kecamatan_id) VALUES (?, ?, ?)", (d["id"], d["nama"], d["kecamatan_id"]))
     for p in data["paslon"]:
+        tf = compute_tf(p["visi"] + " " + " ".join(p["misi"]))
         cur.execute(
-            "INSERT INTO paslon (id, desa_id, nomor_urut, nama, visi, misi_json, pendidikan, umur, foto_url) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
-            (p["id"], p["desa_id"], p["nomor_urut"], p["nama"], p["visi"], json.dumps(p["misi"]), p["pendidikan"], p["umur"], p.get("foto_url")),
+            "INSERT INTO paslon (id, desa_id, nomor_urut, nama, visi, misi_json, pendidikan, umur, foto_url, tf_json) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+            (p["id"], p["desa_id"], p["nomor_urut"], p["nama"], p["visi"], json.dumps(p["misi"]), p["pendidikan"], p["umur"], p.get("foto_url"), json.dumps(tf)),
         )
 
     conn.commit()

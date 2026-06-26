@@ -53,6 +53,7 @@ def get_desa_by_id(desa_id):
         p = dict(p)
         p["misi"] = json.loads(p["misi_json"])
         del p["misi_json"]
+        p.pop("tf_json", None)
         paslon_list.append(p)
     desa["paslon"] = paslon_list
     return desa
@@ -72,6 +73,7 @@ def get_paslon(paslon_id):
     p = dict(row)
     p["misi"] = json.loads(p["misi_json"])
     del p["misi_json"]
+    p.pop("tf_json", None)
     return p
 
 def get_paslon_by_ids(ids):
@@ -93,5 +95,6 @@ def get_paslon_by_ids(ids):
         p = dict(p)
         p["misi"] = json.loads(p["misi_json"])
         del p["misi_json"]
+        p.pop("tf_json", None)
         result.append(p)
     return result
