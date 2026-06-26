@@ -1,2 +1,2 @@
-# No external dependencies — stdlib-only WSGI app.
-# Packaged and deployed to EdgeOne Pages Cloud Functions.
+# No external dependencies — stdlib-only WSGI + SCF handler.
+# Deployed to EdgeOne Pages Cloud Functions.
