@@ -47,6 +47,7 @@ class CocokkanResult(BaseModel):
     skor_pendidikan: float
     skor_umur: float
     skor_total: float
+    summary: str = ""
 
 class CocokkanResponse(BaseModel):
     desa: str

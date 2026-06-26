@@ -112,6 +112,12 @@ export default function HasilPage() {
 
                     <Progress value={r.skor_total} />
 
+                    {r.summary && (
+                      <p className="text-sm text-gray-400 leading-relaxed border-t border-border pt-3">
+                        {r.summary}
+                      </p>
+                    )}
+
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm">
                       <div className="space-y-1">
                         <div className="flex items-center gap-1 text-[#FCD34D]">

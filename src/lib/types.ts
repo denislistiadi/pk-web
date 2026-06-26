@@ -41,6 +41,7 @@ export interface CocokkanResult {
   skor_pendidikan: number
   skor_umur: number
   skor_total: number
+  summary?: string
 }
 
 export interface CocokkanResponse {

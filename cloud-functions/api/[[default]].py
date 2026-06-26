@@ -20,6 +20,7 @@ from tfidf import (
     compute_idf, compute_tfidf, cosine_similarity,
     jaccard_similarity, skor_pendidikan, skor_umur,
 )
+from summary import buat_summary
 
 app = FastAPI(
     title="Paham Kades API",
@@ -132,6 +133,10 @@ async def cocokkan(req: CocokkanRequest):
         ))
 
     results.sort(key=lambda r: r.skor_total, reverse=True)
+
+    summaries = buat_summary(results)
+    for i, r in enumerate(results):
+        r.summary = summaries[i]
 
     return CocokkanResponse(
         desa=desa["nama"],
