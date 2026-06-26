@@ -1,15 +1,50 @@
 """
 Paham Kades — Cek Kecocokan Calon Kepala Desa Kabupaten Pemalang.
-Single-file WSGI + SCF handler (zero deps — stdlib only).
+Single-file, zero-I/O-at-runtime handler (stdlib only).
 """
-import json, os, math, re, random, sqlite3, time, traceback
+import json, os, sys, math, re, random, time, traceback
 from collections import Counter
 from urllib.parse import parse_qs
 
-DB_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "pahamkades.db")
-
 LOG = lambda msg: print(f"[{time.strftime('%H:%M:%S')}] {msg}", file=sys.stderr, flush=True)
+_HERE = os.path.dirname(os.path.abspath(__file__))
 
+# ═══════════════════════════════════════════════════════
+# In-memory data store (loaded once at module init)
+# ═══════════════════════════════════════════════════════
+
+DATA_PATH = os.path.join(_HERE, "data.json")
+_KEC = []
+_DESA = []
+_DESA_BY_ID = {}
+_PASLON = []
+_PASLON_BY_ID = {}
+_PASLON_BY_DESA_ID = {}
+_DATA_LOADED = False
+
+def _load_data():
+    global _KEC, _DESA, _DESA_BY_ID, _PASLON, _PASLON_BY_ID, _PASLON_BY_DESA_ID, _DATA_LOADED
+    if _DATA_LOADED:
+        return
+    if not os.path.exists(DATA_PATH):
+        LOG(f"DATA NOT FOUND at {DATA_PATH}")
+        _DATA_LOADED = True
+        return
+    with open(DATA_PATH, "r", encoding="utf-8") as f:
+        raw = json.load(f)
+    _KEC = raw.get("kecamatan", [])
+    _DESA = raw.get("desa", [])
+    _PASLON = raw.get("paslon", [])
+    _DESA_BY_ID = {d["id"]: d for d in _DESA}
+    _PASLON_BY_ID = {p["id"]: p for p in _PASLON}
+    _PASLON_BY_DESA_ID = {}
+    for p in _PASLON:
+        did = p["desa_id"]
+        _PASLON_BY_DESA_ID.setdefault(did, []).append(p)
+    _DATA_LOADED = True
+    LOG(f"Data loaded: {len(_KEC)} kec, {len(_DESA)} desa, {len(_PASLON)} paslon")
+
+_load_data()
 
 # ═══════════════════════════════════════════════════════
 # TF-IDF
@@ -52,7 +87,6 @@ def skor_umur(umur, min_u, max_u):
         return max(0.0, 100.0 - (min_u - umur) * 10.0)
     return max(0.0, 100.0 - (umur - max_u) * 10.0)
 
-
 # ═══════════════════════════════════════════════════════
 # Summary
 # ═══════════════════════════════════════════════════════
@@ -74,34 +108,32 @@ def buat_summary(nama, nomor_urut, skor_visi, skor_misi, skor_pendidikan, skor_u
     parts = [_pilih(_PREAMBLES)]
     nd = nama_depan
 
-    # Visi
     if skor_visi >= 70:
         parts.append(_pilih([
             f"visi {nd} ({skor_visi:.0f}%) cukup sejalan dengan gambaran Anda.",
-            f"visi calon ini mirip dengan harapan Anda — skor {skor_visi:.0f}%.",
+            f"visi calon ini mirip dengan harapan Anda - skor {skor_visi:.0f}%.",
             f"kesamaan visi cukup tinggi ({skor_visi:.0f}%), {nd} punya arah yang sama dengan Anda.",
         ]))
     elif skor_visi >= 35:
         parts.append(_pilih([
             f"visi {nd} cukup dekat ({skor_visi:.0f}%), walau ada beberapa perbedaan.",
-            f"skor visi {skor_visi:.0f}% — ada titik temu, tapi belum sepenuhnya sejalan.",
+            f"skor visi {skor_visi:.0f}% - ada titik temu, tapi belum sepenuhnya sejalan.",
             f"visi {nd} punya kesamaan secukupnya dengan Anda ({skor_visi:.0f}%).",
         ]))
     else:
         parts.append(_pilih([
             f"visi {nd} masih cukup berbeda dari harapan Anda ({skor_visi:.0f}%).",
-            f"skor visinya {skor_visi:.0f}% — arah pemikirannya belum terlalu cocok.",
+            f"skor visinya {skor_visi:.0f}% - arah pemikirannya belum terlalu cocok.",
             f"visi yang Anda tulis belum banyak nyambung dengan visi {nd} ({skor_visi:.0f}%).",
         ]))
 
-    # Misi
     sama = [m for m in misi_calon if m in misi_user_set]
     if sama:
         acak = random.sample(sama, min(2, len(sama)))
         if len(acak) == 1:
             parts.append(_pilih([
                 f"Misi '{acak[0][:50]}...' juga jadi prioritas Anda.",
-                f"Salah satu misi andalan Anda — '{acak[0][:50]}...' — juga diusung {nd}.",
+                f"Salah satu misi andalan Anda - '{acak[0][:50]}...' - juga diusung {nd}.",
                 f"Ada kesamaan di misi: '{acak[0][:50]}...'.",
             ]))
         else:
@@ -118,19 +150,18 @@ def buat_summary(nama, nomor_urut, skor_visi, skor_misi, skor_pendidikan, skor_u
     elif skor_misi < 30:
         parts.append(_pilih([
             f"Misi {nd} belum banyak yang sesuai dengan prioritas Anda ({skor_misi:.0f}%).",
-            f"Skor misi {skor_misi:.0f}% — arah programnya masih berbeda dengan harapan Anda.",
+            f"Skor misi {skor_misi:.0f}% - arah programnya masih berbeda dengan harapan Anda.",
         ]))
 
-    # Pendidikan
     if skor_pendidikan >= 100:
         parts.append(_pilih([
             f"Pendidikan {nd} ({pendidikan_calon}) sudah di atas batas minimal yang Anda tentukan.",
-            f"Dari sisi pendidikan, {pendidikan_calon} — memenuhi syarat yang Anda cari.",
+            f"Dari sisi pendidikan, {pendidikan_calon} - memenuhi syarat yang Anda cari.",
             f"Latar belakang pendidikan {pendidikan_calon} sudah sesuai standar Anda.",
         ]))
     elif skor_pendidikan >= 50:
         parts.append(_pilih([
-            f"Pendidikan {pendidikan_calon} — lumayan mendekati batas minimal ({pendidikan_min}).",
+            f"Pendidikan {pendidikan_calon} - lumayan mendekati batas minimal ({pendidikan_min}).",
             f"Meski belum mencapai {pendidikan_min}, pendidikan {nd} ({pendidikan_calon}) masih cukup.",
         ]))
     else:
@@ -139,38 +170,36 @@ def buat_summary(nama, nomor_urut, skor_visi, skor_misi, skor_pendidikan, skor_u
             f"Catatan: pendidikan {nd} ({pendidikan_calon}) di bawah minimal ({pendidikan_min}) yang Anda tetapkan.",
         ]))
 
-    # Usia
     if skor_umur >= 100:
         parts.append(_pilih([
             f"Usia {umur_calon} tahun pas dengan range yang Anda cari ({umur_min}-{umur_max}).",
-            f"Usia {umur_calon} tahun — tepat dalam rentang usia ideal Anda.",
+            f"Usia {umur_calon} tahun - tepat dalam rentang usia ideal Anda.",
             f"Umur {nd} ({umur_calon} tahun) masuk range yang Anda inginkan.",
         ]))
     elif skor_umur >= 50:
         parts.append(_pilih([
-            f"Usia {umur_calon} tahun — cukup dekat dengan rentang ({umur_min}-{umur_max}).",
+            f"Usia {umur_calon} tahun - cukup dekat dengan rentang ({umur_min}-{umur_max}).",
             f"Umurnya {umur_calon} tahun, sedikit di luar preferensi usia Anda.",
         ]))
     else:
         parts.append(_pilih([
-            f"Usia {umur_calon} tahun — cukup jauh dari rentang usia yang Anda inginkan ({umur_min}-{umur_max}).",
-            f"Catatan usia: {umur_calon} tahun — agak meleset dari range ideal Anda.",
+            f"Usia {umur_calon} tahun - cukup jauh dari rentang usia yang Anda inginkan ({umur_min}-{umur_max}).",
+            f"Catatan usia: {umur_calon} tahun - agak meleset dari range ideal Anda.",
         ]))
 
-    # Ranking
     if ranking == 1:
         if total_calon > 1 and selisih_atas is not None:
             if selisih_atas < 5:
                 parts.append(_pilih([
-                    f"Peringkat 1, tapi selisihnya tipis banget — beda {selisih_atas:.0f}% aja.",
+                    f"Peringkat 1, tapi selisihnya tipis banget - beda {selisih_atas:.0f}% aja.",
                     f"Nomor satu! Tapi hati-hati, selisih dengan peringkat 2 cuma {selisih_atas:.0f}%.",
                     f"Paling cocok, walau persaingannya ketat (selisih {selisih_atas:.0f}%).",
                 ]))
             elif selisih_atas >= 15:
                 parts.append(_pilih([
-                    f"Peringkat 1 dengan skor {skor_total:.0f}% — unggul jauh dari yang lain ({selisih_atas:.0f}%).",
+                    f"Peringkat 1 dengan skor {skor_total:.0f}% - unggul jauh dari yang lain ({selisih_atas:.0f}%).",
                     f"Jelas paling unggul dengan selisih {selisih_atas:.0f}% dari peringkat 2.",
-                    f"Dominasi penuh — skor {skor_total:.0f}%, beda {selisih_atas:.0f}% dari pesaing terdekat.",
+                    f"Dominasi penuh - skor {skor_total:.0f}%, beda {selisih_atas:.0f}% dari pesaing terdekat.",
                 ]))
             else:
                 parts.append(_pilih([
@@ -179,7 +208,7 @@ def buat_summary(nama, nomor_urut, skor_visi, skor_misi, skor_pendidikan, skor_u
                 ]))
         else:
             parts.append(_pilih([
-                f"Satu-satunya calon — skor kecocokan {skor_total:.0f}%.",
+                f"Satu-satunya calon - skor kecocokan {skor_total:.0f}%.",
                 f"Hanya ada satu calon, skor kecocokan {skor_total:.0f}%.",
             ]))
     elif ranking == 2 and total_calon > 1:
@@ -193,7 +222,6 @@ def buat_summary(nama, nomor_urut, skor_visi, skor_misi, skor_pendidikan, skor_u
             f"Cukup sulit bersaing di peringkat {ranking} dengan skor {skor_total:.0f}%.",
         ]))
 
-    # Tips
     if ranking == 1:
         kurang = [m for m in misi_calon if m not in misi_user_set]
         if kurang and skor_misi < 80:
@@ -214,93 +242,78 @@ def buat_summary(nama, nomor_urut, skor_visi, skor_misi, skor_pendidikan, skor_u
 
 
 # ═══════════════════════════════════════════════════════
-# Database
+# Data access (all from memory)
 # ═══════════════════════════════════════════════════════
 
-def _get_conn():
-    conn = sqlite3.connect(DB_PATH)
-    conn.execute("PRAGMA journal_mode=OFF")
-    conn.row_factory = sqlite3.Row
-    return conn
-
 def get_kecamatan():
-    conn = _get_conn()
-    rows = conn.execute("SELECT id, nama FROM kecamatan ORDER BY nama").fetchall()
-    conn.close()
-    return [{"id": r["id"], "nama": r["nama"]} for r in rows]
+    return [{"id": k["id"], "nama": k["nama"]} for k in _KEC]
 
 def get_desa(kecamatan_id=None):
-    conn = _get_conn()
-    q = """
-        SELECT d.id, d.nama, d.kecamatan_id, k.nama as kecamatan,
-               (SELECT COUNT(*) FROM paslon WHERE desa_id = d.id) as paslon_count
-        FROM desa d JOIN kecamatan k ON k.id = d.kecamatan_id
-    """
-    p = []
-    if kecamatan_id is not None:
-        q += " WHERE d.kecamatan_id = ?"
-        p.append(kecamatan_id)
-    q += " ORDER BY k.nama, d.nama"
-    rows = conn.execute(q, p).fetchall()
-    conn.close()
-    return [dict(r) for r in rows]
+    res = []
+    for d in _DESA:
+        if kecamatan_id is not None and d["kecamatan_id"] != kecamatan_id:
+            continue
+        pl = _PASLON_BY_DESA_ID.get(d["id"], [])
+        # Find kecamatan name
+        kn = ""
+        for k in _KEC:
+            if k["id"] == d["kecamatan_id"]:
+                kn = k["nama"]
+                break
+        res.append({
+            "id": d["id"], "nama": d["nama"],
+            "kecamatan_id": d["kecamatan_id"],
+            "kecamatan": kn, "paslon_count": len(pl),
+        })
+    return res
 
 def get_desa_by_id(desa_id):
-    conn = _get_conn()
-    row = conn.execute("""
-        SELECT d.id, d.nama, d.kecamatan_id, k.nama as kecamatan
-        FROM desa d JOIN kecamatan k ON k.id = d.kecamatan_id WHERE d.id = ?
-    """, (desa_id,)).fetchone()
-    if not row:
-        conn.close()
+    d = _DESA_BY_ID.get(desa_id)
+    if not d:
         return None
-    paslon = conn.execute("""
-        SELECT id, desa_id, nomor_urut, nama, visi, misi_json, pendidikan, umur, foto_url
-        FROM paslon WHERE desa_id = ? ORDER BY nomor_urut
-    """, (desa_id,)).fetchall()
-    conn.close()
-    d = dict(row)
+    kn = ""
+    for k in _KEC:
+        if k["id"] == d["kecamatan_id"]:
+            kn = k["nama"]
+            break
     pl = []
-    for p in paslon:
-        p = dict(p)
-        p["misi"] = json.loads(p.pop("misi_json"))
-        p.pop("tf_json", None)
-        pl.append(p)
-    d["paslon"] = pl
-    return d
+    for p in _PASLON_BY_DESA_ID.get(desa_id, []):
+        pl.append({
+            "id": p["id"], "desa_id": p["desa_id"],
+            "nomor_urut": p["nomor_urut"], "nama": p["nama"],
+            "visi": p["visi"], "misi": p["misi"],
+            "pendidikan": p["pendidikan"], "umur": p["umur"],
+        })
+    return {
+        "id": d["id"], "nama": d["nama"],
+        "kecamatan_id": d["kecamatan_id"], "kecamatan": kn,
+        "paslon": pl,
+    }
 
 def get_paslon(paslon_id):
-    conn = _get_conn()
-    row = conn.execute("""
-        SELECT p.id, p.desa_id, p.nomor_urut, p.nama, p.visi, p.misi_json, p.pendidikan, p.umur, p.foto_url,
-               d.nama as desa_nama
-        FROM paslon p JOIN desa d ON d.id = p.desa_id WHERE p.id = ?
-    """, (paslon_id,)).fetchone()
-    conn.close()
-    if not row:
+    p = _PASLON_BY_ID.get(paslon_id)
+    if not p:
         return None
-    p = dict(row)
-    p["misi"] = json.loads(p.pop("misi_json"))
-    p.pop("tf_json", None)
-    return p
+    return {
+        "id": p["id"], "desa_id": p["desa_id"],
+        "nomor_urut": p["nomor_urut"], "nama": p["nama"],
+        "visi": p["visi"], "misi": p["misi"],
+        "pendidikan": p["pendidikan"], "umur": p["umur"],
+        "desa_nama": _DESA_BY_ID.get(p["desa_id"], {}).get("nama", ""),
+    }
 
 def get_paslon_by_ids(ids):
-    if not ids:
-        return []
-    ph = ",".join("?" * len(ids))
-    conn = _get_conn()
-    rows = conn.execute(f"""
-        SELECT p.id, p.desa_id, p.nomor_urut, p.nama, p.visi, p.misi_json, p.pendidikan, p.umur, p.foto_url,
-               d.nama as desa_nama
-        FROM paslon p JOIN desa d ON d.id = p.desa_id WHERE p.id IN ({ph}) ORDER BY p.nomor_urut
-    """, ids).fetchall()
-    conn.close()
     res = []
-    for r in rows:
-        p = dict(r)
-        p["misi"] = json.loads(p.pop("misi_json"))
-        p.pop("tf_json", None)
-        res.append(p)
+    for pid in ids:
+        p = _PASLON_BY_ID.get(pid)
+        if p:
+            res.append({
+                "id": p["id"], "desa_id": p["desa_id"],
+                "nomor_urut": p["nomor_urut"], "nama": p["nama"],
+                "visi": p["visi"], "misi": p["misi"],
+                "pendidikan": p["pendidikan"], "umur": p["umur"],
+                "desa_nama": _DESA_BY_ID.get(p["desa_id"], {}).get("nama", ""),
+            })
     return res
 
 
@@ -340,20 +353,18 @@ def app(environ, start_response):
             ])
             return [b""]
 
-        # GET /api/ping — health check
         if method == "GET" and path == "/api/ping":
             return _json_res(start_response, {
-                "ok": True, "db": os.path.exists(DB_PATH),
+                "ok": True, "data_loaded": _DATA_LOADED,
+                "paslon_count": len(_PASLON),
                 "time": f"{(time.time()-t0)*1000:.0f}ms"
             })
 
-        # GET /api/kecamatan
         if method == "GET" and path == "/api/kecamatan":
             data = get_kecamatan()
             LOG(f"GET /api/kecamatan -> {len(data)}r ({(time.time()-t0)*1000:.0f}ms)")
             return _json_res(start_response, data)
 
-        # GET /api/desa?kecamatan_id=X
         if method == "GET" and path == "/api/desa":
             qs = parse_qs(environ.get("QUERY_STRING", ""))
             kid = int(qs["kecamatan_id"][0]) if "kecamatan_id" in qs else None
@@ -361,7 +372,6 @@ def app(environ, start_response):
             LOG(f"GET /api/desa -> {len(data)}r ({(time.time()-t0)*1000:.0f}ms)")
             return _json_res(start_response, data)
 
-        # GET /api/desa/{id}
         if method == "GET" and path.startswith("/api/desa/"):
             parts = path.split("/")
             if len(parts) == 4 and parts[3].isdigit():
@@ -371,7 +381,6 @@ def app(environ, start_response):
                 LOG(f"GET /api/desa/{parts[3]} ({(time.time()-t0)*1000:.0f}ms)")
                 return _json_res(start_response, data)
 
-        # GET /api/paslon/compare?ids=1,2,3
         if method == "GET" and path == "/api/paslon/compare":
             qs = parse_qs(environ.get("QUERY_STRING", ""))
             ids_str = qs.get("ids", [""])[0]
@@ -382,7 +391,6 @@ def app(environ, start_response):
             LOG(f"GET /api/paslon/compare -> {len(paslon_list)}p ({(time.time()-t0)*1000:.0f}ms)")
             return _json_res(start_response, {"desa": paslon_list[0].get("desa_nama", ""), "paslon": paslon_list})
 
-        # GET /api/paslon/{id}
         if method == "GET" and path.startswith("/api/paslon/"):
             parts = path.split("/")
             if len(parts) == 4 and parts[3].isdigit():
@@ -392,7 +400,6 @@ def app(environ, start_response):
                 LOG(f"GET /api/paslon/{parts[3]} ({(time.time()-t0)*1000:.0f}ms)")
                 return _json_res(start_response, data)
 
-        # POST /api/cocokkan
         if method == "POST" and path == "/api/cocokkan":
             req = _read_body(environ)
             desa_id = int(req.get("desa_id", 0))
@@ -405,31 +412,19 @@ def app(environ, start_response):
                 return _json_res(start_response, {"error": "Visi wajib diisi"}, "400 Bad Request")
 
             t1 = time.time()
-            conn = _get_conn()
-            row = conn.execute("SELECT nama FROM desa WHERE id = ?", (desa_id,)).fetchone()
-            if not row:
-                conn.close()
+            d = _DESA_BY_ID.get(desa_id)
+            if not d:
                 return _json_res(start_response, {"error": "Desa tidak ditemukan"}, "404 Not Found")
-            desa_nama = row["nama"]
-            rows = conn.execute("""
-                SELECT id, nomor_urut, nama, visi, misi_json, pendidikan, umur, tf_json
-                FROM paslon WHERE desa_id = ? ORDER BY nomor_urut
-            """, (desa_id,)).fetchall()
-            conn.close()
-            if not rows:
+            desa_nama = d["nama"]
+            paslon_list = _PASLON_BY_DESA_ID.get(desa_id, [])
+            if not paslon_list:
                 return _json_res(start_response, {"error": "Tidak ada calon"}, "400 Bad Request")
 
-            paslon = []
-            for r in rows:
-                p = dict(r)
-                p["misi"] = json.loads(p.pop("misi_json"))
-                p["tf"] = json.loads(p.pop("tf_json"))
-                paslon.append(p)
-            LOG(f"  DB: {len(paslon)}p ({(time.time()-t1)*1000:.0f}ms)")
+            LOG(f"  Memory fetch: {len(paslon_list)}p ({(time.time()-t1)*1000:.0f}ms)")
             t2 = time.time()
 
             all_misi = []
-            for p in paslon:
+            for p in paslon_list:
                 for m in p["misi"]:
                     if m not in all_misi:
                         all_misi.append(m)
@@ -438,7 +433,7 @@ def app(environ, start_response):
 
             t3 = time.time()
             user_tf = compute_tf(visi_user)
-            all_tfs = [p["tf"] for p in paslon] + [user_tf]
+            all_tfs = [p["tf"] for p in paslon_list] + [user_tf]
             n = len(all_tfs)
             df = {}
             for tf in all_tfs:
@@ -450,7 +445,7 @@ def app(environ, start_response):
 
             t4 = time.time()
             results = []
-            for p in paslon:
+            for p in paslon_list:
                 pv = {w: v * idf.get(w, 0.01) for w, v in p["tf"].items()}
                 sv = cosine_similarity(uv, pv) * 100
                 sm = jaccard_similarity(user_misi_set, set(p["misi"])) * 100
@@ -468,7 +463,7 @@ def app(environ, start_response):
             t5 = time.time()
             skor_list = [r["skor_total"] for r in results]
             for i, r in enumerate(results):
-                p = next(x for x in paslon if x["id"] == r["paslon_id"])
+                p = next(x for x in paslon_list if x["id"] == r["paslon_id"])
                 selisih = None
                 if i == 0 and len(skor_list) > 1:
                     selisih = skor_list[0] - skor_list[1]
@@ -504,13 +499,10 @@ def app(environ, start_response):
 
 
 # ═══════════════════════════════════════════════════════
-# SCF-compatible handler (for Tencent Cloud SCF)
+# SCF-compatible handler
 # ═══════════════════════════════════════════════════════
 
-import sys
-
 def main_handler(event, context):
-    """SCF event-compatible entry point for Tencent Cloud."""
     method = event.get("httpMethod", "GET")
     path = event.get("path", "/")
     headers = event.get("headers", {})
@@ -526,15 +518,12 @@ def main_handler(event, context):
         qs = ""
 
     environ = {
-        "REQUEST_METHOD": method,
-        "PATH_INFO": path,
+        "REQUEST_METHOD": method, "PATH_INFO": path,
         "QUERY_STRING": qs,
         "CONTENT_TYPE": headers.get("content-type", headers.get("Content-Type", "")),
         "CONTENT_LENGTH": str(len(body_str)),
         "wsgi.input": __import__("io").StringIO(body_str),
-        "SERVER_PROTOCOL": "HTTP/1.1",
-        "SERVER_NAME": "scf",
-        "SERVER_PORT": "80",
+        "SERVER_PROTOCOL": "HTTP/1.1", "SERVER_NAME": "scf", "SERVER_PORT": "80",
     }
 
     response_status = "200 OK"
