@@ -1,157 +1,182 @@
 import random
 
-TEMPLATES_KELEBIHAN = [
-    "Visi {nama} skor {skor}% — paling nyamip dengan harapan Anda.",
-    "Dari segi {kategori}, {nama} unggul banget: skor {skor}%.",
-    "Skor {kategori} {nama} ({skor}%) jadi nilai jual utama.",
-    "{nama} paling menonjol di {kategori}, skor {skor}%.",
-    "{kategori.title()} {nama} (skor {skor}%) patut diacungi jempol.",
-    "Kelebihan utama {nama} ada di {kategori} dengan skor {skor}%.",
-    "Nilai {kategori} {nama} ({skor}%) termasuk yang terbaik.",
-    "{nama} cocok banget dari sisi {kategori}: skor {skor}%.",
-    "{kategori.title()} jadi senjata utama {nama} — skor {skor}%.",
-    "Luar biasa, skor {kategori} {nama} tembus {skor}%.",
-    "Di antara semua calon, {nama} paling unggul di {kategori} ({skor}%).",
-    "Skor {kategori} {nama} ({skor}%) bikin dia beda dari yang lain.",
-    "{nama} punya nilai plus di {kategori}, skor {skor}%.",
-    "Kalau soal {kategori}, {nama} juaranya: skor {skor}%.",
-    "Gak bisa dipungkiri, {kategori} {nama} jadi andalan ({skor}%).",
-    "Dari {kategori}, {nama} dapat skor {skor}% — mantap.",
-    "Satu hal yang bikin {nama} unggul: {kategori} skor {skor}%.",
-    "{nama} bersinar di {kategori}, skor {skor}%.",
-    "Skor {kategori} {nama} ({skor}%) bikin dia layak dipertimbangkan.",
-    "Keunggulan {nama} terlihat jelas di {kategori}: skor {skor}%.",
+PREAMBLES = [
+    "Dari hasil analisis,",
+    "Berdasarkan preferensi Anda,",
+    "Kalau dilihat dari data yang ada,",
+    "Menurut perhitungan kecocokan,",
+    "Dari semua calon yang ada,",
+    "Secara keseluruhan,",
+    "Bila dilihat dari kriterianya,",
 ]
 
-TEMPLATES_KELEMAHAN = [
-    "Catatan: skor {kategori} {nama} masih rendah ({skor}%).",
-    "Kelemahan {nama} ada di {kategori}, skor cuma {skor}%.",
-    "Sayangnya, {kategori} {nama} kurang memenuhi ({skor}%).",
-    "Skor {kategori} {nama} ({skor}%) masih perlu diperbaiki.",
-    "Perlu dicatat, {kategori} bukan point plus {nama} ({skor}%).",
-    "{nama} kurang greget di {kategori}, skor {skor}%.",
-    "Dari sisi {kategori}, {nama} dapat skor {skor}% — masih kurang.",
-    "Evaluasi: {kategori} {nama} cuma {skor}%, di bawah rata-rata.",
-    "{kategori.title()} jadi titik lemah {nama} dengan skor {skor}%.",
-    "Yang perlu diwaspadai: skor {kategori} {nama} baru {skor}%.",
-    "Skor {kategori} {nama} ({skor}%) belum sesuai harapan.",
-    "{nama} masih perlu kerja keras di {kategori} ({skor}%).",
-    "Untuk {kategori}, {nama} masih kurang skor ({skor}%).",
-    "Hasil {kategori} {nama} belum maksimal: skor {skor}%.",
-    "Skor {kategori} {nama} ({skor}%) masih bisa ditingkatkan.",
-    "Catatan kecil: {kategori} {nama} skor {skor}%, perlu perhatian.",
-    "Dari 4 aspek, {kategori} jadi nilai terendah {nama} ({skor}%).",
-    "Yang bikin {nama} turun skor: {kategori} cuma {skor}%.",
-    "Kekurangan {nama} paling terasa di {kategori} ({skor}%).",
-    "Skor {kategori} {nama} ({skor}%) masih di bawah ekspektasi.",
-]
-
-TEMPLATES_PERINGKAT = [
-    "Peringkat 1 unggul tipis {selisih}% dari peringkat 2.",
-    "Dominasi penuh! Peringkat 1 unggul {selisih}% dari runner-up.",
-    "Selisih {selisih}% — peringkat 1 dan 2 bersaing ketat.",
-    "Peringkat 1 unggul cukup jauh, selisih {selisih}%.",
-    "Kompetisi ketat: peringkat 1 hanya unggul {selisih}%.",
-    "Peringkat 1 memimpin dengan keunggulan {selisih}%.",
-    "Jarak peringkat 1 dan 2: {selisih}%.",
-    "Peringkat 1 nyaman di puncak dengan selisih {selisih}%.",
-    "Selisih tipis {selisih}%, peringkat 2 masih bisa mengejar.",
-    "Peringkat 1 kokoh dengan selisih {selisih}% dari peringkat 2.",
-    "Unggul {selisih}% — peringkat 1 layak jadi andalan.",
-    "Peringkat 1 mempertahankan posisi dengan selisih {selisih}%.",
-    "Hanya berselisih {selisih}%, hasil bisa berbeda lain waktu.",
-    "Peringkat 1 memimpin {selisih}%, tapi peringkat 2 patut diperhitungkan.",
-    "{selisih}% jadi jarak antara peringkat 1 dan 2.",
-    "Peringkat 1 lebih cocok {selisih}% dibanding peringkat 2.",
-    "Keunggulan {selisih}% bikin peringkat 1 tak tergoyahkan.",
-    "Meski unggul {selisih}%, peringkat 1 tetap perlu diwaspadai.",
-    "Peringkat 2 tertinggal {selisih}% dari peringkat 1.",
-    "Pertarungan ketat — cuma beda {selisih}% antara peringkat 1 dan 2.",
-]
-
-TEMPLATES_TIP = [
-    "Coba atur ulang range umur buat hasil yang beda.",
-    "Mau coba lagi? Ubah prioritas misi pilihan Anda.",
-    "Tips: naikkan pendidikan minimal lihat calon baru muncul.",
-    "Coba isi visi yang lebih spesifik biar skor makin akurat.",
-    "Ubah-ubah pilihan misi, lihat perubahan ranking-nya.",
-    "Cek hasil lagi setelah ganti preferensi umur.",
-    "Mau coba skenario lain? Ubah visi ideal Anda.",
-    "Eksperimen dengan beda kombinasi misi dan lihat hasilnya.",
-    "Pilih lebih banyak misi atau kurangi, ranking bisa berubah.",
-    "Atur ulang prioritas — hasil bisa beda tiap percobaan.",
-    "Coba bandingkan peringkat 1 dan 2 di halaman compare.",
-    "Jangan puas sama satu hasil, coba kombinasi lain.",
-    "Semakin detail visi Anda, semakin akurat hasilnya.",
-    "Pendidikan minimal bisa bikin perbedaan besar — coba ubah.",
-    "Coba rentang umur yang lebih sempit buat hasil presisi.",
-    "Mainkan bobot preferensi Anda dan lihat perubahannya.",
-    "Gunakan fitur compare buat lihat beda tiap calon.",
-    "Ubah strategi: fokus ke 1-2 misi prioritas saja.",
-    "Bandingkan hasil dengan pilih calon idola Anda langsung.",
-    "Coba refresh halaman dan isi ulang — hasil mungkin beda.",
-]
-
-KATEGORI_MAP = {
-    "skor_visi": "visi",
-    "skor_misi": "visi misi",
-    "skor_pendidikan": "pendidikan",
-    "skor_umur": "umur",
-}
+def _pilih(daftar: list) -> str:
+    return random.choice(daftar)
 
 
-def _kategori_label(key: str) -> str:
-    return KATEGORI_MAP.get(key, key.replace("skor_", ""))
+def buat_summary(
+    nama: str,
+    nomor_urut: int,
+    skor_visi: float,
+    skor_misi: float,
+    skor_pendidikan: float,
+    skor_umur: float,
+    skor_total: float,
+    visi_calon: str,
+    misi_calon: list,
+    pendidikan_calon: str,
+    umur_calon: int,
+    misi_user_set: set,
+    all_misi_items: list,
+    pendidikan_min: str,
+    umur_min: int,
+    umur_max: int,
+    ranking: int,
+    total_calon: int,
+    selisih_atas: float = None,
+) -> str:
+    nama_depan = nama.split(",")[0].split()[0] if "," in nama else nama.split()[0]
+    parts = []
 
+    # --- PREAMBLE ---
+    parts.append(_pilih(PREAMBLES))
 
-def buat_summary(results: list) -> list:
-    summaries = []
-    top_score = results[0].skor_total if results else 0
+    # --- VISI SECTION ---
+    if skor_visi >= 70:
+        parts.append(_pilih([
+            f"visi {nama_depan} ({skor_visi:.0f}%) cukup sejalan dengan gambaran Anda.",
+            f"visi calon ini mirip dengan harapan Anda — skor {skor_visi:.0f}%.",
+            f"kesamaan visi cukup tinggi ({skor_visi:.0f}%), {nama_depan} punya arah yang sama dengan Anda.",
+        ]))
+    elif skor_visi >= 35:
+        parts.append(_pilih([
+            f"visi {nama_depan} cukup dekat ({skor_visi:.0f}%), walau ada beberapa perbedaan.",
+            f"skor visi {skor_visi:.0f}% — ada titik temu, tapi belum sepenuhnya sejalan.",
+            f"visi {nama_depan} punya kesamaan secukupnya dengan Anda ({skor_visi:.0f}%).",
+        ]))
+    else:
+        parts.append(_pilih([
+            f"visi {nama_depan} masih cukup berbeda dari harapan Anda ({skor_visi:.0f}%).",
+            f"skor visinya {skor_visi:.0f}% — arah pemikirannya belum terlalu cocok.",
+            f"visi yang Anda tulis belum banyak nyambung dengan visi {nama_depan} ({skor_visi:.0f}%).",
+        ]))
 
-    for i, r in enumerate(results):
-        parts = []
+    # --- MISI SECTION (dynamic — mention actual missions) ---
+    misi_sama_list = [m for m in misi_calon if m in misi_user_set]
 
-        # Sort scores to find strength & weakness
-        scores = [
-            ("skor_visi", r.skor_visi),
-            ("skor_misi", r.skor_misi),
-            ("skor_pendidikan", r.skor_pendidikan),
-            ("skor_umur", r.skor_umur),
-        ]
-        scores_sorted = sorted(scores, key=lambda x: x[1], reverse=True)
-        tertinggi = scores_sorted[0]
-        terendah = scores_sorted[-1]
+    if misi_sama_list:
+        acak = random.sample(misi_sama_list, min(2, len(misi_sama_list)))
+        if len(acak) == 1:
+            parts.append(_pilih([
+                f"Misi '{acak[0][:50]}…' juga jadi prioritas Anda.",
+                f"Salah satu misi andalan Anda — '{acak[0][:50]}…' — juga diusung {nama_depan}.",
+                f"Ada kesamaan di misi: '{acak[0][:50]}…'.",
+            ]))
+        else:
+            parts.append(_pilih([
+                f"Dua misi juga Anda prioritaskan: '{acak[0][:40]}…' dan '{acak[1][:40]}…'.",
+                f"Beberapa misi cocok, misalnya '{acak[0][:40]}…' dan '{acak[1][:40]}…'.",
+                f"Misi seperti '{acak[0][:40]}…' dan '{acak[1][:40]}…' sejalan dengan pilihan Anda.",
+            ]))
+    elif skor_misi >= 60:
+        parts.append(_pilih([
+            f"Misi-misi {nama_depan} secara umum sejalan dengan prioritas Anda ({skor_misi:.0f}%).",
+            f"Secara umum arah misi {nama_depan} cocok dengan Anda ({skor_misi:.0f}%).",
+        ]))
+    elif skor_misi < 30:
+        parts.append(_pilih([
+            f"Misi {nama_depan} belum banyak yang sesuai dengan prioritas Anda ({skor_misi:.0f}%).",
+            f"Skor misi {skor_misi:.0f}% — arah programnya masih berbeda dengan harapan Anda.",
+        ]))
 
-        # Strength
-        kat_baik = _kategori_label(tertinggi[0])
-        t = random.choice(TEMPLATES_KELEBIHAN).format(
-            nama=r.nama.split(",")[0].split()[0] if "," in r.nama else r.nama.split()[0],
-            skor=int(tertinggi[1]),
-            kategori=kat_baik,
-        )
-        parts.append(t)
+    # --- PENDIDIKAN SECTION ---
+    if skor_pendidikan >= 100:
+        parts.append(_pilih([
+            f"Pendidikan {nama_depan} ({pendidikan_calon}) sudah di atas batas minimal yang Anda tentukan.",
+            f"Dari sisi pendidikan, {pendidikan_calon} — memenuhi syarat yang Anda cari.",
+            f"Latar belakang pendidikan {pendidikan_calon} sudah sesuai standar Anda.",
+        ]))
+    elif skor_pendidikan >= 50:
+        parts.append(_pilih([
+            f"Pendidikan {pendidikan_calon} — lumayan mendekati batas minimal ({pendidikan_min}).",
+            f"Meski belum mencapai {pendidikan_min}, pendidikan {nama_depan} ({pendidikan_calon}) masih cukup.",
+        ]))
+    else:
+        parts.append(_pilih([
+            f"Pendidikan {pendidikan_calon} mungkin masih kurang dari yang Anda harapkan ({pendidikan_min}).",
+            f"Catatan: pendidikan {nama_depan} ({pendidikan_calon}) di bawah minimal ({pendidikan_min}) yang Anda tetapkan.",
+        ]))
 
-        # Weakness (if not perfect)
-        if terendah[1] < 100:
-            kat_buruk = _kategori_label(terendah[0])
-            t = random.choice(TEMPLATES_KELEMAHAN).format(
-                nama=r.nama.split(",")[0].split()[0] if "," in r.nama else r.nama.split()[0],
-                skor=int(terendah[1]),
-                kategori=kat_buruk,
-            )
-            parts.append(t)
+    # --- USIA SECTION ---
+    if skor_umur >= 100:
+        parts.append(_pilih([
+            f"Usia {umur_calon} tahun pas dengan range yang Anda cari ({umur_min}-{umur_max}).",
+            f"Usia {umur_calon} tahun — tepat dalam rentang usia ideal Anda.",
+            f"Umur {nama_depan} ({umur_calon} tahun) masuk range yang Anda inginkan.",
+        ]))
+    elif skor_umur >= 50:
+        parts.append(_pilih([
+            f"Usia {umur_calon} tahun — cukup dekat dengan rentang ({umur_min}-{umur_max}).",
+            f"Umurnya {umur_calon} tahun, sedikit di luar preferensi usia Anda.",
+        ]))
+    else:
+        parts.append(_pilih([
+            f"Usia {umur_calon} tahun — cukup jauh dari rentang usia yang Anda inginkan ({umur_min}-{umur_max}).",
+            f"Catatan usia: {umur_calon} tahun — agak meleset dari range ideal Anda.",
+        ]))
 
-        # Rank 1 comparison (only for rank 1)
-        if i == 0 and len(results) > 1:
-            selisih = r.skor_total - results[1].skor_total
-            t = random.choice(TEMPLATES_PERINGKAT).format(selisih=f"{selisih:.0f}")
-            parts.append(t)
+    # --- OVERALL / RANKING ---
+    if ranking == 1:
+        if total_calon > 1 and selisih_atas is not None:
+            if selisih_atas < 5:
+                parts.append(_pilih([
+                    f"Peringkat 1, tapi selisihnya tipis banget — beda {selisih_atas:.0f}% aja.",
+                    f"Nomor satu! Tapi hati-hati, selisih dengan peringkat 2 cuma {selisih_atas:.0f}%.",
+                    f"Paling cocok, walau persaingannya ketat (selisih {selisih_atas:.0f}%).",
+                ]))
+            elif selisih_atas >= 15:
+                parts.append(_pilih([
+                    f"Peringkat 1 dengan skor {skor_total:.0f}% — unggul jauh dari yang lain ({selisih_atas:.0f}%).",
+                    f"Jelas paling unggul dengan selisih {selisih_atas:.0f}% dari peringkat 2.",
+                    f"Dominasi penuh — skor {skor_total:.0f}%, beda {selisih_atas:.0f}% dari pesaing terdekat.",
+                ]))
+            else:
+                parts.append(_pilih([
+                    f"Peringkat 1 dengan skor {skor_total:.0f}%, unggul {selisih_atas:.0f}% dari peringkat 2.",
+                    f"Keluar sebagai yang paling cocok ({skor_total:.0f}%), dengan selisih {selisih_atas:.0f}%.",
+                ]))
+        else:
+            parts.append(_pilih([
+                f"Satu-satunya calon — skor kecocokan {skor_total:.0f}%.",
+                f"Hanya ada satu calon, skor kecocokan {skor_total:.0f}%.",
+            ]))
+    elif ranking == 2 and total_calon > 1:
+        parts.append(_pilih([
+            f"Peringkat 2 dari {total_calon} calon dengan skor {skor_total:.0f}%.",
+            f"Berada di posisi kedua ({skor_total:.0f}%), masih patut dipertimbangkan.",
+        ]))
+    elif ranking >= 3:
+        parts.append(_pilih([
+            f"Peringkat ke-{ranking} dari {total_calon} calon ({skor_total:.0f}%).",
+            f"Cukup sulit bersaing di peringkat {ranking} dengan skor {skor_total:.0f}%.",
+        ]))
 
-        # Tip (only for rank 1, every 3rd request-ish)
-        if i == 0:
-            t = random.choice(TEMPLATES_TIP)
-            parts.append(t)
+    # --- TIPS for top 1 ---
+    if ranking == 1:
+        misi_kurang = [m for m in misi_calon if m not in misi_user_set]
+        if misi_kurang and skor_misi < 80:
+            parts.append(_pilih([
+                f"Coba tambah atau kurangi pilihan misi, hasil bisa beda.",
+                f"Mau variasi? Ubah-ubah prioritas misi Anda.",
+                f"Atur ulang preferensi misi untuk lihat perubahan ranking.",
+            ]))
+        else:
+            parts.append(_pilih([
+                f"Gunakan fitur compare untuk lihat perbandingan langsung.",
+                f"Coba bandingkan dengan calon lain di fitur Bandingkan.",
+                f"Lihat detail calon lain dengan fitur compare.",
+            ]))
 
-        summaries.append(" ".join(parts))
-
-    return summaries
+    kalimat = " ".join(parts)
+    kalimat = kalimat[0].upper() + kalimat[1:]
+    return kalimat

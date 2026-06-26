@@ -134,9 +134,36 @@ async def cocokkan(req: CocokkanRequest):
 
     results.sort(key=lambda r: r.skor_total, reverse=True)
 
-    summaries = buat_summary(results)
+    skor_list = [r.skor_total for r in results]
     for i, r in enumerate(results):
-        r.summary = summaries[i]
+        p = next(x for x in paslon if x["id"] == r.paslon_id)
+        if i == 0 and len(skor_list) > 1:
+            selisih_atas = skor_list[0] - skor_list[1]
+        elif i > 0:
+            selisih_atas = skor_list[i - 1] - r.skor_total
+        else:
+            selisih_atas = None
+        r.summary = buat_summary(
+            nama=r.nama,
+            nomor_urut=r.nomor_urut,
+            skor_visi=r.skor_visi,
+            skor_misi=r.skor_misi,
+            skor_pendidikan=r.skor_pendidikan,
+            skor_umur=r.skor_umur,
+            skor_total=r.skor_total,
+            visi_calon=p["visi"],
+            misi_calon=p["misi"],
+            pendidikan_calon=p["pendidikan"],
+            umur_calon=p["umur"],
+            misi_user_set=user_misi_set,
+            all_misi_items=all_misi_items,
+            pendidikan_min=req.pendidikan_min,
+            umur_min=req.umur_min,
+            umur_max=req.umur_max,
+            ranking=i + 1,
+            total_calon=len(results),
+            selisih_atas=selisih_atas,
+        )
 
     return CocokkanResponse(
         desa=desa["nama"],
