@@ -1,2 +1,0 @@
-# No external dependencies — stdlib-only WSGI + SCF handler.
-# Deployed to EdgeOne Pages Cloud Functions.
