@@ -1,7 +1,12 @@
-import { NextResponse } from "next/server"
+import { success, internal } from "@/lib/response"
 import { getKecamatan } from "@/lib/data"
 
 export async function GET() {
-  const data = getKecamatan()
-  return NextResponse.json(data)
+  try {
+    const data = getKecamatan()
+    return success(data)
+  } catch (e) {
+    console.error("GET /api/kecamatan:", e)
+    return internal()
+  }
 }

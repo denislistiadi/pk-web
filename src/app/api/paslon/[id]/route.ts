@@ -1,12 +1,21 @@
-import { NextRequest, NextResponse } from "next/server"
+import { success, notFound, badRequest, internal } from "@/lib/response"
 import { getPaslon } from "@/lib/data"
 
 export async function GET(
-  _req: NextRequest,
+  _req: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
-  const { id } = await params
-  const data = getPaslon(Number(id))
-  if (!data) return NextResponse.json({ error: "Calon tidak ditemukan" }, { status: 404 })
-  return NextResponse.json(data)
+  try {
+    const { id } = await params
+    const paslonId = Number(id)
+    if (!Number.isInteger(paslonId) || paslonId < 1) {
+      return badRequest("ID calon harus berupa angka positif")
+    }
+    const data = getPaslon(paslonId)
+    if (!data) return notFound("Calon tidak ditemukan")
+    return success(data)
+  } catch (e) {
+    console.error("GET /api/paslon/[id]:", e)
+    return internal()
+  }
 }
