@@ -19,13 +19,12 @@ A web application to help Pemalang residents find, compare, and match with villa
 - **shadcn/ui** — Component system (Button, Card, Badge, Progress, Select, etc.)
 
 ### Backend
-- **FastAPI** — High-performance Python web framework
-- **Pydantic** — Data validation with type hints
-- **SQLite** — Embedded database for seed data
-- **Pure Python TF-IDF** — Matching engine with no external AI dependencies
+- **Next.js API Routes** — Server-side endpoints within the same Next.js app
+- **better-sqlite3** — SQLite database for seed data
+- **TypeScript TF-IDF** — Pure TypeScript matching engine with no external AI dependencies
 
 ### Platform
-- **EdgeOne Pages** — Serverless hosting (Cloud Functions + Static site)
+- **EdgeOne Pages** — Serverless hosting (single Next.js deployment)
 
 ## Project Structure
 
@@ -33,85 +32,70 @@ A web application to help Pemalang residents find, compare, and match with villa
 pk-web/
 ├── src/
 │   ├── app/
-│   │   ├── layout.tsx              # Root layout
-│   │   ├── page.tsx                # Homepage
-│   │   ├── globals.css             # Indonesian theme (red & gold)
+│   │   ├── layout.tsx                  # Root layout
+│   │   ├── page.tsx                    # Homepage
+│   │   ├── globals.css                 # Indonesian theme (red & gold)
+│   │   ├── api/
+│   │   │   ├── kecamatan/route.ts      # GET /api/kecamatan
+│   │   │   ├── desa/
+│   │   │   │   ├── route.ts            # GET /api/desa
+│   │   │   │   └── [id]/route.ts       # GET /api/desa/{id}
+│   │   │   ├── paslon/
+│   │   │   │   ├── [id]/route.ts       # GET /api/paslon/{id}
+│   │   │   │   └── compare/route.ts    # GET /api/paslon/compare
+│   │   │   └── cocokkan/route.ts       # POST /api/cocokkan
 │   │   └── desa/
-│   │       ├── page.tsx            # Village directory
+│   │       ├── page.tsx                # Village directory
 │   │       └── [id]/
-│   │           ├── page.tsx        # Village detail + candidates
-│   │           ├── form/page.tsx   # Preference form
-│   │           ├── hasil/page.tsx  # Match results
-│   │           └── compare/page.tsx # Candidate comparison
+│   │           ├── page.tsx            # Village detail + candidates
+│   │           ├── form/page.tsx       # Preference form
+│   │           ├── hasil/page.tsx      # Match results
+│   │           └── compare/page.tsx    # Candidate comparison
 │   ├── components/
-│   │   ├── layout/                 # Header & Footer
-│   │   ├── ui/                     # Reusable UI components
+│   │   ├── layout/                     # Header & Footer
+│   │   ├── ui/                         # Reusable UI components
 │   │   ├── desa-card.tsx
 │   │   └── paslon-card.tsx
-│   └── lib/
-│       ├── types.ts                # TypeScript interfaces
-│       ├── api.ts                  # API client
-│       └── utils.ts                # Utility functions
-├── cloud-functions/
-│   ├── api/
-│   │   └── [[default]].py          # FastAPI application
 │   ├── lib/
-│   │   ├── database.py             # SQLite queries
-│   │   ├── models.py               # Pydantic models
-│   │   └── tfidf.py                # TF-IDF matching engine
-│   ├── seed.py                     # Database seeder
-│   ├── run_api.py                  # Dev server helper
-│   ├── pahamkades.db               # SQLite database
-│   └── requirements.txt            # Python dependencies
+│   │   ├── types.ts                    # TypeScript interfaces
+│   │   ├── api.ts                      # API client
+│   │   ├── utils.ts                    # Utility functions
+│   │   ├── data.ts                     # SQLite connector + queries
+│   │   ├── tfidf.ts                    # TF-IDF matching engine
+│   │   ├── summary.ts                  # Summary generator
+│   │   └── matching.ts                 # Cocokkan matching logic
+│   ├── data/
+│   │   └── pahamkades.db               # SQLite database
+│   └── scripts/
+│       └── seed.ts                     # Database seeder
 ├── data/
-│   └── seed-data.json              # Seed data (edit this for real data)
+│   └── seed-data.json                  # Seed data source
 ├── public/
-│   └── favicon.svg                 # PK logo favicon
-└── next.config.ts                  # API rewrite config
+│   └── favicon.svg                     # PK logo favicon
+└── next.config.ts
 ```
 
 ## Quick Start
 
 ### Requirements
 - Node.js 18+
-- Python 3.9+
 
-### Install Dependencies
+### Install & Run
 
 ```bash
 npm install
-pip install -r cloud-functions/requirements.txt
-```
-
-### Seed Database
-
-```bash
-python cloud-functions/seed.py
-```
-
-### Development Mode
-
-Run backend and frontend in separate terminals:
-
-**Terminal 1 — Backend (FastAPI):**
-```bash
-python cloud-functions/run_api.py
-```
-
-**Terminal 2 — Frontend (Next.js):**
-```bash
 npm run dev
 ```
 
 Visit [http://localhost:3000](http://localhost:3000) to view the application.
 
-### EdgeOne Pages Development
+### Re-seed Database
+
+If you modify `data/seed-data.json`, rebuild the database:
 
 ```bash
-edgeone pages dev
+npx tsx src/scripts/seed.ts
 ```
-
-Visit [http://localhost:8088](http://localhost:8088).
 
 ## API Endpoints
 
@@ -138,7 +122,7 @@ Visit [http://localhost:8088](http://localhost:8088).
 Edit `data/seed-data.json` with real candidate information, then re-seed:
 
 ```bash
-python cloud-functions/seed.py
+npx tsx src/scripts/seed.ts
 ```
 
 ## License
