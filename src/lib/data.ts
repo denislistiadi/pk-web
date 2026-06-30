@@ -1,116 +1,134 @@
-import Database from "better-sqlite3"
-import path from "path"
+import { createClient } from "@libsql/client"
+import type { Row } from "@libsql/client"
 
-interface KecamatanRow { id: number; nama: string }
-interface DesaRow { id: number; nama: string; kecamatan_id: number; kecamatan: string; paslon_count: number }
-interface PaslonRow {
-  id: number; desa_id: number; nomor_urut: number; nama: string
-  visi: string; misi_json: string; pendidikan: string; umur: number
-  foto_url: string | null; tf_json: string; desa_nama?: string
-}
+let _client: ReturnType<typeof createClient> | null = null
 
-const DB_PATH = path.join(process.cwd(), "src", "data", "pahamkades.db")
-
-let _db: Database.Database | null = null
-
-function db(): Database.Database {
-  if (!_db) {
-    _db = new Database(DB_PATH, { readonly: true })
+function db() {
+  if (!_client) {
+    _client = createClient({
+      url: process.env.TURSO_DB_URL!,
+      authToken: process.env.TURSO_DB_AUTH_TOKEN,
+    })
   }
-  return _db
+  return _client
 }
 
-export function getKecamatan() {
-  return db().prepare("SELECT id, nama FROM kecamatan ORDER BY nama").all() as KecamatanRow[]
+function row(r: Row) {
+  return r as Record<string, unknown>
 }
 
-export function getDesa(kecamatanId?: number) {
+export async function getKecamatan() {
+  const rs = await db().execute("SELECT id, nama FROM kecamatan ORDER BY nama")
+  return rs.rows.map(r => ({
+    id: Number(r.id),
+    nama: String(r.nama),
+  }))
+}
+
+export async function getDesa(kecamatanId?: number) {
   if (kecamatanId != null) {
-    return db().prepare(`
-      SELECT d.id, d.nama, d.kecamatan_id, k.nama AS kecamatan,
-             (SELECT COUNT(*) FROM paslon WHERE desa_id = d.id) AS paslon_count
-      FROM desa d JOIN kecamatan k ON k.id = d.kecamatan_id
-      WHERE d.kecamatan_id = ? ORDER BY k.nama, d.nama
-    `).all(kecamatanId) as DesaRow[]
+    const rs = await db().execute({
+      sql: `SELECT d.id, d.nama, d.kecamatan_id, k.nama AS kecamatan,
+               (SELECT COUNT(*) FROM paslon WHERE desa_id = d.id) AS paslon_count
+            FROM desa d JOIN kecamatan k ON k.id = d.kecamatan_id
+            WHERE d.kecamatan_id = ? ORDER BY k.nama, d.nama`,
+      args: [kecamatanId],
+    })
+    return rs.rows.map(r => ({
+      id: Number(r.id),
+      nama: String(r.nama),
+      kecamatan_id: Number(row(r).kecamatan_id),
+      kecamatan: String(r.kecamatan),
+      paslon_count: Number(row(r).paslon_count),
+    }))
   }
-  return db().prepare(`
-    SELECT d.id, d.nama, d.kecamatan_id, k.nama AS kecamatan,
-           (SELECT COUNT(*) FROM paslon WHERE desa_id = d.id) AS paslon_count
-    FROM desa d JOIN kecamatan k ON k.id = d.kecamatan_id
-    ORDER BY k.nama, d.nama
-  `).all() as DesaRow[]
+  const rs = await db().execute(`SELECT d.id, d.nama, d.kecamatan_id, k.nama AS kecamatan,
+    (SELECT COUNT(*) FROM paslon WHERE desa_id = d.id) AS paslon_count
+    FROM desa d JOIN kecamatan k ON k.id = d.kecamatan_id ORDER BY k.nama, d.nama`)
+  return rs.rows.map(r => ({
+    id: Number(r.id),
+    nama: String(r.nama),
+    kecamatan_id: Number(row(r).kecamatan_id),
+    kecamatan: String(r.kecamatan),
+    paslon_count: Number(row(r).paslon_count),
+  }))
 }
 
-export function getDesaById(desaId: number) {
-  const row = db().prepare(`
-    SELECT d.id, d.nama, d.kecamatan_id, k.nama AS kecamatan
-    FROM desa d JOIN kecamatan k ON k.id = d.kecamatan_id WHERE d.id = ?
-  `).get(desaId) as { id: number; nama: string; kecamatan_id: number; kecamatan: string } | undefined
-  if (!row) return null
-  const paslon = db().prepare(`
-    SELECT id, desa_id, nomor_urut, nama, visi, misi_json, pendidikan, umur, foto_url
-    FROM paslon WHERE desa_id = ? ORDER BY nomor_urut
-  `).all(desaId) as PaslonRow[]
+export async function getDesaById(desaId: number) {
+  const rs = await db().execute({
+    sql: `SELECT d.id, d.nama, d.kecamatan_id, k.nama AS kecamatan
+          FROM desa d JOIN kecamatan k ON k.id = d.kecamatan_id WHERE d.id = ?`,
+    args: [desaId],
+  })
+  if (!rs.rows.length) return null
+  const d = row(rs.rows[0])
+  const prs = await db().execute({
+    sql: "SELECT id, desa_id, nomor_urut, nama, visi, misi_json, pendidikan, umur, foto_url FROM paslon WHERE desa_id = ? ORDER BY nomor_urut",
+    args: [desaId],
+  })
   return {
-    id: row.id,
-    nama: row.nama,
-    kecamatan_id: row.kecamatan_id,
-    kecamatan: row.kecamatan,
-    paslon: paslon.map(p => ({
-      id: p.id,
-      desa_id: p.desa_id,
-      nomor_urut: p.nomor_urut,
-      nama: p.nama,
-      visi: p.visi,
-      misi: JSON.parse(p.misi_json) as string[],
-      pendidikan: p.pendidikan,
-      umur: p.umur,
-      foto_url: p.foto_url ?? undefined,
+    id: Number(d.id),
+    nama: String(d.nama),
+    kecamatan_id: Number(d.kecamatan_id),
+    kecamatan: String(d.kecamatan),
+    paslon: prs.rows.map(r => ({
+      id: Number(r.id),
+      desa_id: Number(row(r).desa_id),
+      nomor_urut: Number(row(r).nomor_urut),
+      nama: String(r.nama),
+      visi: String(r.visi),
+      misi: JSON.parse(String(r.misi_json)) as string[],
+      pendidikan: String(r.pendidikan),
+      umur: Number(row(r).umur),
+      foto_url: String(row(r).foto_url ?? "") || undefined,
     })),
   }
 }
 
-export function getPaslon(paslonId: number) {
-  const row = db().prepare(`
-    SELECT p.id, p.desa_id, p.nomor_urut, p.nama, p.visi, p.misi_json,
-           p.pendidikan, p.umur, p.foto_url, d.nama AS desa_nama
-    FROM paslon p JOIN desa d ON d.id = p.desa_id WHERE p.id = ?
-  `).get(paslonId) as PaslonRow | undefined
-  if (!row) return null
+export async function getPaslon(paslonId: number) {
+  const rs = await db().execute({
+    sql: `SELECT p.id, p.desa_id, p.nomor_urut, p.nama, p.visi, p.misi_json,
+               p.pendidikan, p.umur, p.foto_url, d.nama AS desa_nama
+          FROM paslon p JOIN desa d ON d.id = p.desa_id WHERE p.id = ?`,
+    args: [paslonId],
+  })
+  if (!rs.rows.length) return null
+  const r = rs.rows[0]
   return {
-    id: row.id,
-    desa_id: row.desa_id,
-    nomor_urut: row.nomor_urut,
-    nama: row.nama,
-    visi: row.visi,
-    misi: JSON.parse(row.misi_json) as string[],
-    pendidikan: row.pendidikan,
-    umur: row.umur,
-    foto_url: row.foto_url ?? undefined,
-    desa_nama: row.desa_nama ?? "",
+    id: Number(r.id),
+    desa_id: Number(row(r).desa_id),
+    nomor_urut: Number(row(r).nomor_urut),
+    nama: String(r.nama),
+    visi: String(r.visi),
+    misi: JSON.parse(String(row(r).misi_json)) as string[],
+    pendidikan: String(r.pendidikan),
+    umur: Number(row(r).umur),
+    foto_url: String(row(r).foto_url ?? "") || undefined,
+    desa_nama: String(r.desa_nama),
   }
 }
 
-export function getPaslonByIds(ids: number[]) {
+export async function getPaslonByIds(ids: number[]) {
   if (!ids.length) return []
   const ph = ids.map(() => "?").join(",")
-  const rows = db().prepare(`
-    SELECT p.id, p.desa_id, p.nomor_urut, p.nama, p.visi, p.misi_json,
-           p.pendidikan, p.umur, p.foto_url, d.nama AS desa_nama
-    FROM paslon p JOIN desa d ON d.id = p.desa_id
-    WHERE p.id IN (${ph}) ORDER BY p.nomor_urut
-  `).all(...ids) as PaslonRow[]
-  return rows.map(row => ({
-    id: row.id,
-    desa_id: row.desa_id,
-    nomor_urut: row.nomor_urut,
-    nama: row.nama,
-    visi: row.visi,
-    misi: JSON.parse(row.misi_json) as string[],
-    pendidikan: row.pendidikan,
-    umur: row.umur,
-    foto_url: row.foto_url ?? undefined,
-    desa_nama: row.desa_nama ?? "",
+  const rs = await db().execute({
+    sql: `SELECT p.id, p.desa_id, p.nomor_urut, p.nama, p.visi, p.misi_json,
+                 p.pendidikan, p.umur, p.foto_url, d.nama AS desa_nama
+          FROM paslon p JOIN desa d ON d.id = p.desa_id
+          WHERE p.id IN (${ph}) ORDER BY p.nomor_urut`,
+    args: ids,
+  })
+  return rs.rows.map(r => ({
+    id: Number(r.id),
+    desa_id: Number(row(r).desa_id),
+    nomor_urut: Number(row(r).nomor_urut),
+    nama: String(r.nama),
+    visi: String(r.visi),
+    misi: JSON.parse(String(row(r).misi_json)) as string[],
+    pendidikan: String(r.pendidikan),
+    umur: Number(row(r).umur),
+    foto_url: String(row(r).foto_url ?? "") || undefined,
+    desa_nama: String(r.desa_nama),
   }))
 }
 
@@ -120,20 +138,20 @@ export interface PaslonWithTf {
   tf: Record<string, number>
 }
 
-export function getPaslonByDesaId(desaId: number): PaslonWithTf[] {
-  const rows = db().prepare(`
-    SELECT id, desa_id, nomor_urut, nama, visi, misi_json, pendidikan, umur, tf_json
-    FROM paslon WHERE desa_id = ? ORDER BY nomor_urut
-  `).all(desaId) as PaslonRow[]
-  return rows.map(r => ({
-    id: r.id,
-    desa_id: r.desa_id,
-    nomor_urut: r.nomor_urut,
-    nama: r.nama,
-    visi: r.visi,
-    misi: JSON.parse(r.misi_json) as string[],
-    pendidikan: r.pendidikan,
-    umur: r.umur,
-    tf: JSON.parse(r.tf_json) as Record<string, number>,
+export async function getPaslonByDesaId(desaId: number): Promise<PaslonWithTf[]> {
+  const rs = await db().execute({
+    sql: "SELECT id, desa_id, nomor_urut, nama, visi, misi_json, pendidikan, umur, tf_json FROM paslon WHERE desa_id = ? ORDER BY nomor_urut",
+    args: [desaId],
+  })
+  return rs.rows.map(r => ({
+    id: Number(r.id),
+    desa_id: Number(row(r).desa_id),
+    nomor_urut: Number(row(r).nomor_urut),
+    nama: String(r.nama),
+    visi: String(r.visi),
+    misi: JSON.parse(String(row(r).misi_json)) as string[],
+    pendidikan: String(r.pendidikan),
+    umur: Number(row(r).umur),
+    tf: JSON.parse(String(row(r).tf_json)) as Record<string, number>,
   }))
 }
