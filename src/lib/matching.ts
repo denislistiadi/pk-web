@@ -1,6 +1,6 @@
 import { computeTf, cosineSimilarity, jaccardSimilarity, skorPendidikan, skorUmur } from "./tfidf"
 import { buatSummary } from "./summary"
-import { getPaslonByDesaId, getDesaById } from "./data"
+import { getPaslonByDesaId } from "./data"
 
 export interface CocokkanRequest {
   desa_id: number
@@ -11,25 +11,26 @@ export interface CocokkanRequest {
   umur_max: number
 }
 
-interface CocokkanResult {
+export interface CocokkanResult {
   paslon_id: number; nama: string; nomor_urut: number
   skor_visi: number; skor_misi: number
   skor_pendidikan: number; skor_umur: number
   skor_total: number; summary?: string
 }
 
-export function cocokkan(req: CocokkanRequest): {
+export function cocokkan(
+  desaNama: string,
+  req: CocokkanRequest
+): {
   desa: string; results: CocokkanResult[];
   user_input: { visi: string; misi_count: number; pendidikan_min: string; umur_min: number; umur_max: number }
 } {
-  const { desa_id, visi_user, misi_user, pendidikan_min, umur_min, umur_max } = req
+  const { visi_user, misi_user, pendidikan_min, umur_min, umur_max } = req
 
-  const d = getDesaById(desa_id)
-  if (!d) throw Object.assign(new Error("Desa tidak ditemukan"), { status: 404 })
-  const desa_nama = d.nama
-
-  const paslon_list = getPaslonByDesaId(desa_id)
-  if (!paslon_list.length) throw Object.assign(new Error("Tidak ada calon"), { status: 400 })
+  const paslon_list = getPaslonByDesaId(req.desa_id)
+  if (!paslon_list.length) {
+    return { desa: desaNama, results: [], user_input: { visi: visi_user, misi_count: misi_user.length, pendidikan_min, umur_min, umur_max } }
+  }
 
   const all_misi: string[] = []
   for (const p of paslon_list) {
@@ -90,7 +91,7 @@ export function cocokkan(req: CocokkanRequest): {
   }
 
   return {
-    desa: desa_nama,
+    desa: desaNama,
     results,
     user_input: {
       visi: visi_user,
