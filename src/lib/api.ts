@@ -5,13 +5,31 @@ import type {
 
 const BASE = "/api"
 
+class ApiError extends Error {
+  code: string
+  status: number
+
+  constructor(code: string, message: string, status: number) {
+    super(message)
+    this.name = "ApiError"
+    this.code = code
+    this.status = status
+  }
+}
+
 async function fetchJson<T>(url: string, init?: RequestInit): Promise<T> {
   const res = await fetch(url, init)
+
+  const body = await res.json().catch(() => null)
+
   if (!res.ok) {
-    const body = await res.text()
-    throw new Error(`API ${res.status}: ${body}`)
+    const err = body?.error
+    const message = err?.message ?? `HTTP ${res.status}`
+    const code = err?.code ?? "UNKNOWN_ERROR"
+    throw new ApiError(code, message, res.status)
   }
-  return res.json()
+
+  return body?.data as T
 }
 
 export function getKecamatan(): Promise<Kecamatan[]> {
@@ -42,3 +60,5 @@ export function cocokkan(req: CocokkanRequest): Promise<CocokkanResponse> {
     body: JSON.stringify(req),
   })
 }
+
+export { ApiError }
