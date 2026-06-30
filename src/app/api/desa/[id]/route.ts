@@ -11,7 +11,7 @@ export async function GET(
     if (!Number.isInteger(desaId) || desaId < 1) {
       return badRequest("ID desa harus berupa angka positif")
     }
-    const data = getDesaById(desaId)
+    const data = await getDesaById(desaId)
     if (!data) return notFound("Desa tidak ditemukan")
     return success(data)
   } catch (e) {

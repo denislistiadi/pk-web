@@ -11,7 +11,7 @@ export async function GET(
     if (!Number.isInteger(paslonId) || paslonId < 1) {
       return badRequest("ID calon harus berupa angka positif")
     }
-    const data = getPaslon(paslonId)
+    const data = await getPaslon(paslonId)
     if (!data) return notFound("Calon tidak ditemukan")
     return success(data)
   } catch (e) {

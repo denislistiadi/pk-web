@@ -12,7 +12,7 @@ export async function GET(req: Request) {
         return badRequest("kecamatan_id harus berupa angka positif")
       }
     }
-    const data = getDesa(kid)
+    const data = await getDesa(kid)
     return success(data)
   } catch (e) {
     console.error("GET /api/desa:", e)

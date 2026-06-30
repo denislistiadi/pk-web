@@ -18,16 +18,16 @@ export interface CocokkanResult {
   skor_total: number; summary?: string
 }
 
-export function cocokkan(
+export async function cocokkan(
   desaNama: string,
   req: CocokkanRequest
-): {
+): Promise<{
   desa: string; results: CocokkanResult[];
   user_input: { visi: string; misi_count: number; pendidikan_min: string; umur_min: number; umur_max: number }
-} {
+}> {
   const { visi_user, misi_user, pendidikan_min, umur_min, umur_max } = req
 
-  const paslon_list = getPaslonByDesaId(req.desa_id)
+  const paslon_list = await getPaslonByDesaId(req.desa_id)
   if (!paslon_list.length) {
     return { desa: desaNama, results: [], user_input: { visi: visi_user, misi_count: misi_user.length, pendidikan_min, umur_min, umur_max } }
   }

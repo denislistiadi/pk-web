@@ -27,7 +27,7 @@ export async function POST(req: Request) {
       return badRequest("Visi maksimal 500 karakter")
     }
 
-    const desa = getDesaById(desaId)
+    const desa = await getDesaById(desaId)
     if (!desa) {
       return notFound("Desa tidak ditemukan")
     }
@@ -59,7 +59,7 @@ export async function POST(req: Request) {
       return badRequest("Maksimal 10 pilihan misi")
     }
 
-    const result = cocokkan(desa.nama, {
+    const result = await cocokkan(desa.nama, {
       desa_id: desaId,
       visi_user: visiUser,
       misi_user: misiUser,

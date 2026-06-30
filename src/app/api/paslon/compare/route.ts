@@ -17,7 +17,7 @@ export async function GET(req: Request) {
       return badRequest("Maksimal 5 calon dapat dibandingkan")
     }
 
-    const paslon = getPaslonByIds(ids)
+    const paslon = await getPaslonByIds(ids)
     if (paslon.length < 2) {
       return badRequest("Calon yang dipilih tidak ditemukan")
     }
