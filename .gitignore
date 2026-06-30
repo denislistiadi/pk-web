@@ -1,7 +1,11 @@
 # Tencent Cloud EdgeOne
-.env
 .edgeone/*
 .tef_dist/*
+
+# Environment
+.env
+.env.local
+.env.*.local
 
 # Dependencies
 node_modules
@@ -11,9 +15,5 @@ package-lock.json
 .next
 next-env.d.ts
 
-# Python
-__pycache__
-*.pyc
-
-# SQLite database (replaced by data.json)
-cloud-functions/pahamkades.db
+# TypeScript
+tsconfig.tsbuildinfo
